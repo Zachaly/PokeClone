@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="15" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="3" nextobjectid="8">
+ <tileset firstgid="1" source="tileset.tsx"/>
+ <tileset firstgid="1301" source="objects.tsx"/>
+ <tileset firstgid="1303" source="character.tsx"/>
+ <layer id="1" name="map" width="15" height="15">
+  <data encoding="csv">
+262,262,262,262,262,262,262,262,262,262,262,262,262,262,262,
+262,262,262,262,262,262,262,262,262,262,262,262,262,262,262,
+262,262,262,262,262,262,262,262,262,262,262,262,262,262,262,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+54,54,54,54,54,54,54,54,54,54,54,54,54,54,54,
+106,106,106,106,106,106,106,106,106,106,106,106,106,106,106,
+158,158,158,158,158,158,158,158,158,158,158,158,158,158,158,
+262,262,262,262,262,262,262,262,262,262,262,262,262,262,262,
+262,262,262,262,262,262,262,262,365,366,366,367,262,262,262,
+262,262,262,262,262,262,262,262,417,574,574,419,262,262,262,
+262,262,262,262,262,262,262,262,417,574,574,419,262,262,262,
+262,262,262,262,262,262,262,262,469,470,470,471,262,262,262,
+262,262,262,262,262,262,262,262,262,262,262,262,262,262,262
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="5" gid="1301" x="3.89077" y="95.9628" width="96" height="96"/>
+  <object id="6" gid="1302" x="112.221" y="95.4053" width="96" height="80"/>
+  <object id="7" name="player" gid="1303" x="26.7944" y="131.979" width="32" height="32">
+   <properties>
+    <property name="controller" type="bool" value="true"/>
+    <property name="speed" type="float" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

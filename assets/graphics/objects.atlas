@@ -1,0 +1,20 @@
+
+objects.png
+size: 256, 128
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+pokecenter/pokecenter
+  rotate: false
+  xy: 2, 2
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+shop/shop
+  rotate: false
+  xy: 102, 18
+  size: 96, 80
+  orig: 96, 80
+  offset: 0, 0
+  index: -1

@@ -7,6 +7,11 @@ dependencies {
   api "com.crashinvaders.lml:gdx-autumn:$lmlVersion"
   api "com.crashinvaders.lml:gdx-kiwi:$lmlVersion"
   api "com.crashinvaders.lml:gdx-lml:$lmlVersion"
+  api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+  api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+  api "com.badlogicgames.ashley:ashley:1.7.4"
+  api "com.badlogicgames.gdx:gdx-ai:1.8.2"
+
   annotationProcessor "org.projectlombok:lombok:$lombokVersion"
   compileOnly "org.projectlombok:lombok:$lombokVersion"
 
