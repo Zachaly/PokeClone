@@ -9,9 +9,7 @@ import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.MapAsset;
 import pk.pokeclone.input.GameControllerState;
 import pk.pokeclone.input.KeyboardController;
-import pk.pokeclone.system.ControllerSystem;
-import pk.pokeclone.system.MoveSystem;
-import pk.pokeclone.system.RenderSystem;
+import pk.pokeclone.system.*;
 import pk.pokeclone.tiled.TiledAshleyConfigurator;
 import pk.pokeclone.tiled.TiledService;
 
@@ -32,6 +30,9 @@ public class GameScreen extends ScreenAdapter {
 
         engine.addSystem(new ControllerSystem());
         engine.addSystem(new MoveSystem());
+        engine.addSystem(new FsmSystem());
+        engine.addSystem(new FacingSystem());
+        engine.addSystem(new AnimationSystem(game.getAssetService()));
         engine.addSystem(new RenderSystem(game.getBatch(), game.getViewport(), game.getCamera()));
 
         tiledAshleyConfigurator = new TiledAshleyConfigurator(engine, game.getAssetService());

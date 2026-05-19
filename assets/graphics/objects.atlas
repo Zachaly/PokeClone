@@ -1,9 +1,121 @@
 
 objects.png
-size: 256, 128
+size: 512, 128
 format: RGBA8888
 filter: Nearest, Nearest
 repeat: none
+character/idle_down
+  rotate: false
+  xy: 202, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/idle_left
+  rotate: false
+  xy: 202, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/idle_right
+  rotate: false
+  xy: 238, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/idle_up
+  rotate: false
+  xy: 238, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/walk_down
+  rotate: false
+  xy: 274, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/walk_down
+  rotate: false
+  xy: 274, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+character/walk_down
+  rotate: false
+  xy: 310, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+character/walk_left
+  rotate: false
+  xy: 310, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/walk_left
+  rotate: false
+  xy: 346, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+character/walk_left
+  rotate: false
+  xy: 346, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+character/walk_right
+  rotate: false
+  xy: 382, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/walk_right
+  rotate: false
+  xy: 382, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+character/walk_right
+  rotate: false
+  xy: 418, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+character/walk_up
+  rotate: false
+  xy: 418, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 0
+character/walk_up
+  rotate: false
+  xy: 454, 66
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+character/walk_up
+  rotate: false
+  xy: 454, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
 pokecenter/pokecenter
   rotate: false
   xy: 2, 2

@@ -4,6 +4,7 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.TextureData;
+import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FileTextureData;
@@ -14,10 +15,7 @@ import lombok.AllArgsConstructor;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.AssetService;
 import pk.pokeclone.asset.AtlasAsset;
-import pk.pokeclone.component.Controller;
-import pk.pokeclone.component.Graphic;
-import pk.pokeclone.component.Move;
-import pk.pokeclone.component.Transform;
+import pk.pokeclone.component.*;
 
 @AllArgsConstructor
 public class TiledAshleyConfigurator {
@@ -40,8 +38,27 @@ public class TiledAshleyConfigurator {
 
         addEntityController(tile, entity);
         addEntityMove(tile, entity);
+        addEntityAnimation(tile, entity);
+        entity.add(new Facing(Facing.FacingDirection.DOWN));
+        entity.add(new Fsm(entity));
 
         engine.addEntity(entity);
+    }
+
+    private void addEntityAnimation(TiledMapTile tile, Entity entity) {
+        String animationString = tile.getProperties().get("animation", "", String.class);
+        if(animationString.isBlank()) {
+            return;
+        }
+
+        Animation2D.AnimationType type = Animation2D.AnimationType.valueOf(animationString);
+        String atlasAssetString = tile.getProperties().get("atlasAsset", "OBJECTS", String.class);
+        AtlasAsset asset = AtlasAsset.valueOf(atlasAssetString);
+        FileTextureData textureData = (FileTextureData)tile.getTextureRegion().getTexture().getTextureData();
+        String atlasKey = textureData.getFileHandle().nameWithoutExtension();
+        float speed = tile.getProperties().get("animationSpeed", 0f, Float.class);
+
+        entity.add(new Animation2D(asset, atlasKey, type, Animation.PlayMode.LOOP, speed));
     }
 
     private void addEntityMove(TiledMapTile tile, Entity entity) {

@@ -3,6 +3,9 @@
  <image source="../player/character.png" width="128" height="128"/>
  <tile id="0">
   <properties>
+   <property name="animation" value="IDLE"/>
+   <property name="animationSpeed" type="float" value="1"/>
+   <property name="atlasAsset" value="OBJECTS"/>
    <property name="controller" type="bool" value="true"/>
    <property name="speed" type="float" value="2"/>
   </properties>
