@@ -3,7 +3,6 @@ package pk.pokeclone.ai;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.ai.fsm.State;
 import com.badlogic.gdx.ai.msg.Telegram;
-import com.badlogic.gdx.graphics.g2d.Animation;
 import pk.pokeclone.component.Animation2D;
 import pk.pokeclone.component.Fsm;
 import pk.pokeclone.component.Move;
