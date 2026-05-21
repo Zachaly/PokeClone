@@ -1,4 +1,4 @@
-package pk.pokeclone.enums;
+package pk.pokeclone.pokemon;
 
 public enum PokemonType {
     NORMAL,

@@ -73,7 +73,5 @@ public class AnimationSystem extends IteratingSystem {
     public record CacheKey(AtlasAsset atlasAsset,
                            String atlasKey,
                            Animation2D.AnimationType type,
-                           Facing.FacingDirection direction) {
-
-    }
+                           Facing.FacingDirection direction) {}
 }

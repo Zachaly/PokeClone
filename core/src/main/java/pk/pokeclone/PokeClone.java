@@ -76,7 +76,6 @@ public class PokeClone extends Game {
         setScreen(screen);
     }
 
-
     public void removeScreen(Screen screen) {
         screenCache.remove(screen.getClass());
     }

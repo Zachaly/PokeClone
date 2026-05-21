@@ -162,6 +162,4 @@ public class TiledAshleyConfigurator {
 
         return tile.getTextureRegion();
     }
-
-
 }

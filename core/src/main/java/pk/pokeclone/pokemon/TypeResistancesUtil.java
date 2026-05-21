@@ -1,6 +1,4 @@
-package pk.pokeclone.utils;
-
-import pk.pokeclone.enums.PokemonType;
+package pk.pokeclone.pokemon;
 
 import java.util.List;
 import java.util.Map;

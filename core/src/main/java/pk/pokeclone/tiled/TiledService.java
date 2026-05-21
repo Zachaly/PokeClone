@@ -14,7 +14,7 @@ import pk.pokeclone.asset.MapAsset;
 import java.util.function.Consumer;
 
 public class TiledService {
-    private AssetService assetService;
+    private final AssetService assetService;
     private TiledMap currentMap = null;
     @Setter
     private Consumer<TiledMap> mapChangeConsumer = null;
