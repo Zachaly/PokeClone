@@ -4,29 +4,31 @@ import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 import pk.pokeclone.component.Move;
+import pk.pokeclone.component.Physic;
 import pk.pokeclone.component.Transform;
 
 public class MoveSystem extends IteratingSystem {
+    private final Vector2 normalizedDirection = new Vector2();
 
     public MoveSystem() {
-        super(Family.all(Move.class, Transform.class).get());
+        super(Family.all(Move.class, Physic.class).get());
     }
 
     @Override
     protected void processEntity(Entity entity, float deltaTime) {
         Move move = Move.MAPPER.get(entity);
-
+        Body body = Physic.MAPPER.get(entity).getBody();
         if(move.isRooted() || move.getDirection().isZero()) {
+            body.setLinearVelocity(0, 0);
             return;
         }
 
-        Transform transform = Transform.MAPPER.get(entity);
-        Vector2 currentPos = transform.getPosition();
-
-        transform.getPosition().set(
-            currentPos.x + move.getMaxSpeed() * move.getDirection().x * deltaTime,
-            currentPos.y + move.getMaxSpeed() * move.getDirection().y * deltaTime
+        normalizedDirection.set(move.getDirection()).nor();
+        body.setLinearVelocity(
+            move.getMaxSpeed() * normalizedDirection.x,
+            move.getMaxSpeed() * normalizedDirection.y
         );
     }
 }

@@ -11,16 +11,52 @@
     ],
     "propertyTypes": [
         {
-            "id": 1,
-            "name": "ObjectType",
-            "storageType": "string",
-            "type": "enum",
-            "values": [
-                "UNDEFINED",
-                "PLAYER",
-                "PROP"
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 5,
+            "members": [
+                {
+                    "name": "animation",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "animationSpeed",
+                    "type": "float",
+                    "value": 0
+                },
+                {
+                    "name": "atlasAsset",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "speed",
+                    "type": "float",
+                    "value": 0
+                }
             ],
-            "valuesAsFlags": false
+            "name": "GameObject",
+            "type": "class",
+            "useAs": [
+                "property",
+                "tile",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 4,
+            "members": [
+            ],
+            "name": "Prop",
+            "type": "class",
+            "useAs": [
+                "property",
+                "tile",
+                "project"
+            ]
         }
     ]
 }

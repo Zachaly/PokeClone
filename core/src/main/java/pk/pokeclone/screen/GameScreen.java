@@ -4,6 +4,8 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Disposable;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.MapAsset;
@@ -21,21 +23,26 @@ public class GameScreen extends ScreenAdapter {
     private final TiledAshleyConfigurator tiledAshleyConfigurator;
     private final KeyboardController keyboardController;
     private final PokeClone game;
+    private final World physicWorld;
 
     public GameScreen(PokeClone game) {
         engine = new Engine();
         tiledService = new TiledService(game.getAssetService());
         keyboardController = new KeyboardController(GameControllerState.class, engine);
         this.game = game;
+        physicWorld = new World(Vector2.Zero, true);
+        physicWorld.setAutoClearForces(false);
 
         engine.addSystem(new ControllerSystem());
         engine.addSystem(new MoveSystem());
         engine.addSystem(new FsmSystem());
         engine.addSystem(new FacingSystem());
+        engine.addSystem(new PhysicSystem(physicWorld, 1/60f));
         engine.addSystem(new AnimationSystem(game.getAssetService()));
         engine.addSystem(new RenderSystem(game.getBatch(), game.getViewport(), game.getCamera()));
+        engine.addSystem(new PhysicDebugRenderSystem(physicWorld, game.getCamera()));
 
-        tiledAshleyConfigurator = new TiledAshleyConfigurator(engine, game.getAssetService());
+        tiledAshleyConfigurator = new TiledAshleyConfigurator(engine, game.getAssetService(), physicWorld);
     }
 
     @Override
@@ -47,6 +54,7 @@ public class GameScreen extends ScreenAdapter {
 
         tiledService.setMapChangeConsumer(renderConsumer);
         tiledService.setLoadObjectConsumer(tiledAshleyConfigurator::onLoadObject);
+        tiledService.setLoadTileConsumer(tiledAshleyConfigurator::onLoadTile);
 
         TiledMap map = tiledService.loadMap(MapAsset.START);
         tiledService.setMap(map);
@@ -56,8 +64,6 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         delta = Math.min(delta, 1 / 30f);
         this.engine.update(delta);
-
-
     }
 
     @Override
@@ -72,5 +78,7 @@ public class GameScreen extends ScreenAdapter {
                 disposableSystem.dispose();
             }
         }
+
+        physicWorld.dispose();
     }
 }

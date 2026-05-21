@@ -1,5 +1,5 @@
 {
-    "activeFile": "character.tsx",
+    "activeFile": "startmap.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -16,10 +16,10 @@
         },
         "startmap.tmx": {
             "scale": 4.837083333333333,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 115.46214144198466,
-                "y": 89.82685847187525
+                "x": 142.95804978895686,
+                "y": 113.80825221810663
             }
         },
         "tileset.tsx": {
@@ -41,12 +41,12 @@
         "objects.tsx"
     ],
     "project": "gamemaps.tiled-project",
-    "property.type": "float",
+    "property.type": "string",
     "recentFiles": [
-        "startmap.tmx",
-        "tileset.tsx",
         "objects.tsx",
-        "character.tsx"
+        "character.tsx",
+        "tileset.tsx",
+        "startmap.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
