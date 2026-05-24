@@ -16,10 +16,10 @@
         },
         "startmap.tmx": {
             "scale": 4.837083333333333,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 142.95804978895686,
-                "y": 113.80825221810663
+                "x": 86.93255233008873,
+                "y": 112.77457145318287
             }
         },
         "tileset.tsx": {
@@ -41,7 +41,7 @@
         "objects.tsx"
     ],
     "project": "gamemaps.tiled-project",
-    "property.type": "string",
+    "property.type": "bool",
     "recentFiles": [
         "objects.tsx",
         "character.tsx",

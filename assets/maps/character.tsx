@@ -6,6 +6,7 @@
    <property name="animation" value="IDLE"/>
    <property name="animationSpeed" type="float" value="2"/>
    <property name="atlasAsset" value="OBJECTS"/>
+   <property name="cameraFollow" type="bool" value="true"/>
    <property name="controller" type="bool" value="true"/>
    <property name="speed" type="float" value="5"/>
   </properties>

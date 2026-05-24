@@ -19,8 +19,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PokeClone extends Game {
-    public static final float WORLD_WIDTH = 32f;
-    public static final float WORLD_HEIGHT = 18f;
+    public static final float WORLD_WIDTH = 16f;
+    public static final float WORLD_HEIGHT = 9f;
     public static final float SCALE = 1f / 16;
 
     private final Map<Class<? extends Screen>, Screen> screenCache = new HashMap<>();

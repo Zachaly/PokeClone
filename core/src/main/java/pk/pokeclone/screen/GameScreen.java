@@ -27,11 +27,11 @@ public class GameScreen extends ScreenAdapter {
 
     public GameScreen(PokeClone game) {
         engine = new Engine();
-        tiledService = new TiledService(game.getAssetService());
-        keyboardController = new KeyboardController(GameControllerState.class, engine);
-        this.game = game;
         physicWorld = new World(Vector2.Zero, true);
         physicWorld.setAutoClearForces(false);
+        tiledService = new TiledService(game.getAssetService(), physicWorld);
+        keyboardController = new KeyboardController(GameControllerState.class, engine);
+        this.game = game;
 
         engine.addSystem(new ControllerSystem());
         engine.addSystem(new MoveSystem());
@@ -39,6 +39,7 @@ public class GameScreen extends ScreenAdapter {
         engine.addSystem(new FacingSystem());
         engine.addSystem(new PhysicSystem(physicWorld, 1/60f));
         engine.addSystem(new AnimationSystem(game.getAssetService()));
+        engine.addSystem(new CameraSystem(game.getCamera()));
         engine.addSystem(new RenderSystem(game.getBatch(), game.getViewport(), game.getCamera()));
         engine.addSystem(new PhysicDebugRenderSystem(physicWorld, game.getCamera()));
 
@@ -51,8 +52,9 @@ public class GameScreen extends ScreenAdapter {
         keyboardController.setActiveState(GameControllerState.class);
 
         Consumer<TiledMap> renderConsumer = engine.getSystem(RenderSystem.class)::setMap;
+        Consumer<TiledMap> cameraConsumer = engine.getSystem(CameraSystem.class)::setMap;
 
-        tiledService.setMapChangeConsumer(renderConsumer);
+        tiledService.setMapChangeConsumer(renderConsumer.andThen(cameraConsumer));
         tiledService.setLoadObjectConsumer(tiledAshleyConfigurator::onLoadObject);
         tiledService.setLoadTileConsumer(tiledAshleyConfigurator::onLoadTile);
 

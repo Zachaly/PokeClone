@@ -24,6 +24,15 @@ import pk.pokeclone.component.Transform;
 public class TiledAshleyConfigurator {
     private static final Vector2 DEFAULT_PHYSIC_SCALING = new Vector2(1, 1);
 
+    public static final String CAMERA_FOLLOW = "cameraFollow";
+    public static final String TYPE = "type";
+    public static final String ANIMATION = "animation";
+    public static final String ATLAS_ASSET = "atlasAsset";
+    public static final String OBJECTS = "OBJECTS";
+    public static final String ANIMATION_SPEED = "animationSpeed";
+    public static final String SPEED = "speed";
+    public static final String CONTROLLER = "controller";
+
     private final Engine engine;
     private final AssetService assetService;
     private final World physicWorld;
@@ -79,12 +88,20 @@ public class TiledAshleyConfigurator {
         addEntityController(tile, entity);
         addEntityMove(tile, entity);
         addEntityAnimation(tile, entity);
+        addEntityCameraFollow(tile, entity);
         BodyDef.BodyType bodyType = getObjectBodyType(tile);
         addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
         entity.add(new Facing(Facing.FacingDirection.DOWN));
         entity.add(new Fsm(entity));
 
         engine.addEntity(entity);
+    }
+
+    private void addEntityCameraFollow(TiledMapTile tile, Entity entity) {
+        boolean cameraFollow = tile.getProperties().get(CAMERA_FOLLOW, false, Boolean.class);
+        if(!cameraFollow) return;
+
+        entity.add(new CameraFollow());
     }
 
     private void addEntityPhysics(MapObjects objects, BodyDef.BodyType bodyType, Vector2 relativeTo, Entity entity) {
@@ -97,7 +114,7 @@ public class TiledAshleyConfigurator {
     }
 
     private BodyDef.BodyType getObjectBodyType(TiledMapTile tile) {
-        String classType = tile.getProperties().get("type", "", String.class);
+        String classType = tile.getProperties().get(TYPE, "", String.class);
 
         if("Prop".equals(classType)) {
             return BodyDef.BodyType.StaticBody;
@@ -107,23 +124,23 @@ public class TiledAshleyConfigurator {
     }
 
     private void addEntityAnimation(TiledMapTile tile, Entity entity) {
-        String animationString = tile.getProperties().get("animation", "", String.class);
+        String animationString = tile.getProperties().get(ANIMATION, "", String.class);
         if(animationString.isBlank()) {
             return;
         }
 
         Animation2D.AnimationType type = Animation2D.AnimationType.valueOf(animationString);
-        String atlasAssetString = tile.getProperties().get("atlasAsset", "OBJECTS", String.class);
+        String atlasAssetString = tile.getProperties().get(ATLAS_ASSET, OBJECTS, String.class);
         AtlasAsset asset = AtlasAsset.valueOf(atlasAssetString);
         FileTextureData textureData = (FileTextureData)tile.getTextureRegion().getTexture().getTextureData();
         String atlasKey = textureData.getFileHandle().nameWithoutExtension();
-        float speed = tile.getProperties().get("animationSpeed", 0f, Float.class);
+        float speed = tile.getProperties().get(ANIMATION_SPEED, 0f, Float.class);
 
         entity.add(new Animation2D(asset, atlasKey, type, Animation.PlayMode.LOOP, speed));
     }
 
     private void addEntityMove(TiledMapTile tile, Entity entity) {
-        float speed = tile.getProperties().get("speed", 0f, Float.class);
+        float speed = tile.getProperties().get(SPEED, 0f, Float.class);
 
         if(speed == 0) return;
 
@@ -131,7 +148,7 @@ public class TiledAshleyConfigurator {
     }
 
     private void addEntityController(TiledMapTile tile, Entity entity) {
-        boolean controller = tile.getProperties().get("controller", false, Boolean.class);
+        boolean controller = tile.getProperties().get(CONTROLLER, false, Boolean.class);
         if(!controller) return;
 
         entity.add(new Controller());
@@ -149,7 +166,7 @@ public class TiledAshleyConfigurator {
     }
 
     private TextureRegion getTextureRegion(TiledMapTile tile) {
-        String atlasAssetStr = tile.getProperties().get("atlasAsset", AtlasAsset.OBJECTS.name(), String.class);
+        String atlasAssetStr = tile.getProperties().get(ATLAS_ASSET, AtlasAsset.OBJECTS.name(), String.class);
         AtlasAsset atlasAsset = AtlasAsset.valueOf(atlasAssetStr);
         TextureAtlas textureAtlas = this.assetService.get(atlasAsset);
         FileTextureData textureData = (FileTextureData)tile.getTextureRegion().getTexture().getTextureData();
