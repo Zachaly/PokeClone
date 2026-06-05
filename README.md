@@ -36,3 +36,8 @@ For example, `core:clean` removes `build` folder only from the `core` project.
 ## Assets
 Assets are taken from:
 - https://scarloxy.itch.io/mpwsp01
+- https://pixel-boy.itch.io/ninja-adventure-asset-pack
+
+## Other tools used
+- https://github.com/raeleus/skin-composer
+- https://quillraven.github.io/gdx-quilly-utils/

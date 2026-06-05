@@ -1,0 +1,9 @@
+{
+  "name": "Bubble",
+  "type": "WATER",
+  "power": 40,
+  "attackType": "SPECIAL",
+  "maxUses": 25,
+  "statusEffect": null,
+  "stageEffects": []
+}

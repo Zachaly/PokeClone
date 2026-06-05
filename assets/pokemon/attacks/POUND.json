@@ -1,0 +1,9 @@
+{
+  "name": "Pound",
+  "type": "NORMAL",
+  "power": 40,
+  "attackType": "PHYSICAL",
+  "maxUses": 35,
+  "statusEffect": null,
+  "stageEffects": []
+}

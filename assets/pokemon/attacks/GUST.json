@@ -1,0 +1,9 @@
+{
+  "name": "Gust",
+  "type": "FLYING",
+  "power": 40,
+  "attackType": "SPECIAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

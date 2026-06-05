@@ -1,0 +1,102 @@
+
+skin.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+white-pixel
+  rotate: false
+  xy: 323, 332
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+bulbasaur
+  rotate: false
+  xy: 1, 177
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+charmander
+  rotate: false
+  xy: 1, 79
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+squirtle
+  rotate: false
+  xy: 99, 177
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+BackgroundScroll
+  rotate: false
+  xy: 1, 11
+  size: 38, 66
+  split: 11, 5, 13, 13
+  pad: 0, 0, 0, 0
+  orig: 38, 66
+  offset: 0, 0
+  index: -1
+DialogBox
+  rotate: false
+  xy: 1, 275
+  size: 300, 58
+  split: 6, 7, 15, 7
+  pad: 0, 0, 0, 0
+  orig: 300, 58
+  offset: 0, 0
+  index: -1
+LifeBarMiniProgress
+  rotate: false
+  xy: 303, 329
+  size: 18, 4
+  orig: 18, 4
+  offset: 0, 0
+  index: -1
+LifeBarMiniUnder
+  rotate: false
+  xy: 99, 171
+  size: 18, 4
+  orig: 18, 4
+  offset: 0, 0
+  index: -1
+button_disabled
+  rotate: false
+  xy: 1, 1
+  size: 16, 8
+  split: 3, 3, 4, 3
+  pad: 0, 0, 0, 0
+  orig: 16, 8
+  offset: 0, 0
+  index: -1
+button_hover
+  rotate: false
+  xy: 303, 319
+  size: 16, 8
+  split: 3, 3, 4, 3
+  pad: 0, 0, 0, 0
+  orig: 16, 8
+  offset: 0, 0
+  index: -1
+button_normal
+  rotate: false
+  xy: 197, 265
+  size: 16, 8
+  split: 4, 4, 4, 3
+  pad: 0, 0, 0, 0
+  orig: 16, 8
+  offset: 0, 0
+  index: -1
+button_pressed
+  rotate: false
+  xy: 41, 69
+  size: 16, 8
+  split: 3, 3, 4, 2
+  pad: 0, 0, 0, 0
+  orig: 16, 8
+  offset: 0, 0
+  index: -1

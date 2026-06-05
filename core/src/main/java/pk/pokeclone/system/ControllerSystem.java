@@ -3,14 +3,19 @@ package pk.pokeclone.system;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
+import pk.pokeclone.PokeClone;
 import pk.pokeclone.component.Controller;
 import pk.pokeclone.component.Move;
 import pk.pokeclone.input.Command;
+import pk.pokeclone.screen.MenuScreen;
 
 public class ControllerSystem extends IteratingSystem {
 
-    public ControllerSystem() {
+    private final PokeClone game;
+
+    public ControllerSystem(PokeClone game) {
         super(Family.all(Controller.class).get());
+        this.game = game;
     }
 
     @Override
@@ -27,6 +32,7 @@ public class ControllerSystem extends IteratingSystem {
                 case DOWN -> moveEntity(entity, 0f, -1f);
                 case LEFT -> moveEntity(entity, -1f, 0f);
                 case RIGHT -> moveEntity(entity, 1f, 0f);
+                case MENU -> game.setScreen(MenuScreen.class);
             }
         }
 

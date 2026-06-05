@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.AssetService;
 import pk.pokeclone.asset.AtlasAsset;
+import pk.pokeclone.asset.SkinAsset;
+
+import java.awt.*;
 
 @AllArgsConstructor
 public class LoadingScreen extends ScreenAdapter {
@@ -17,21 +20,30 @@ public class LoadingScreen extends ScreenAdapter {
         for(AtlasAsset atlas : AtlasAsset.values()) {
             assetService.queue(atlas);
         }
+
+        for(SkinAsset skin : SkinAsset.values()) {
+            assetService.queue(skin);
+        }
     }
 
     @Override
     public void render(float delta) {
         if(assetService.update()) {
             Gdx.app.debug("Loading", "Finished loading");
+            createScreens();
+            this.game.removeScreen(this);
+            this.dispose();
+            this.game.setScreen(MainMenuScreen.class);
         }
-
-        createScreens();
-        this.game.removeScreen(this);
-        this.dispose();
-        this.game.setScreen(GameScreen.class);
     }
 
-    private void createScreens() {
+    private void createScreens()
+    {
+        this.game.addScreen(new MainMenuScreen(game));
         this.game.addScreen(new GameScreen(game));
+        this.game.addScreen(new SelectPokemonScreen(game));
+        this.game.addScreen(new MenuScreen(game));
+        this.game.addScreen(new PokemonListScreen(game));
+        this.game.addScreen(new ItemListScreen(game));
     }
 }

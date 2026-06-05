@@ -1,0 +1,9 @@
+{
+  "name": "Shadow ball",
+  "type": "GHOST",
+  "power": 60,
+  "attackType": "SPECIAL",
+  "maxUses": 20,
+  "statusEffect": null,
+  "stageEffects": []
+}

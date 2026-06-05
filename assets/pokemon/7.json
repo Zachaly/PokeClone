@@ -1,0 +1,17 @@
+{
+  "name": "Squirtle",
+  "types": ["WATER"],
+  "baseStats": {
+    "hp": 44,
+    "attack": 48,
+    "defense": 65,
+    "spAttack": 50,
+    "spDefense": 64,
+    "speed": 43
+  },
+  "learnset": {
+    "1": "TACKLE",
+    "3": "TAILWIP",
+    "7": "BUBBLE"
+  }
+}

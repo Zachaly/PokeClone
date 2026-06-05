@@ -1,0 +1,9 @@
+{
+  "name": "Confusion",
+  "type": "PSYCHIC",
+  "power": 50,
+  "attackType": "SPECIAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Headbutt",
+  "type": "NORMAL",
+  "power": 70,
+  "attackType": "PHYSICAL",
+  "maxUses": 15,
+  "statusEffect": null,
+  "stageEffects": []
+}

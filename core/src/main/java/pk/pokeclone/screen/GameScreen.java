@@ -24,6 +24,7 @@ public class GameScreen extends ScreenAdapter {
     private final KeyboardController keyboardController;
     private final PokeClone game;
     private final World physicWorld;
+    private boolean loaded = false;
 
     public GameScreen(PokeClone game) {
         engine = new Engine();
@@ -33,7 +34,7 @@ public class GameScreen extends ScreenAdapter {
         keyboardController = new KeyboardController(GameControllerState.class, engine);
         this.game = game;
 
-        engine.addSystem(new ControllerSystem());
+        engine.addSystem(new ControllerSystem(game));
         engine.addSystem(new MoveSystem());
         engine.addSystem(new FsmSystem());
         engine.addSystem(new FacingSystem());
@@ -51,6 +52,8 @@ public class GameScreen extends ScreenAdapter {
         game.setInputProcessor(keyboardController);
         keyboardController.setActiveState(GameControllerState.class);
 
+        if(loaded) return;
+
         Consumer<TiledMap> renderConsumer = engine.getSystem(RenderSystem.class)::setMap;
         Consumer<TiledMap> cameraConsumer = engine.getSystem(CameraSystem.class)::setMap;
 
@@ -60,17 +63,14 @@ public class GameScreen extends ScreenAdapter {
 
         TiledMap map = tiledService.loadMap(MapAsset.START);
         tiledService.setMap(map);
+
+        loaded = true;
     }
 
     @Override
     public void render(float delta) {
         delta = Math.min(delta, 1 / 30f);
         this.engine.update(delta);
-    }
-
-    @Override
-    public void hide() {
-        this.engine.removeAllEntities();
     }
 
     @Override

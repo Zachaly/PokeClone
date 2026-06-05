@@ -1,0 +1,15 @@
+{
+  "name": "Growl",
+  "type": "NORMAL",
+  "power": 0,
+  "attackType": "SPECIAL",
+  "maxUses": 40,
+  "statusEffect": null,
+  "stageEffects": [
+    {
+      "target": "DEFENDER",
+      "affectedStat": "ATTACK",
+      "value": -1
+    }
+  ]
+}

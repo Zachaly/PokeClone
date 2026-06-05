@@ -1,0 +1,9 @@
+{
+  "name": "Low kick",
+  "type": "FIGHTING",
+  "power": 30,
+  "attackType": "PHYSICAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

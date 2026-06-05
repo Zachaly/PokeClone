@@ -1,0 +1,18 @@
+{
+  "name": "Machop",
+  "types": ["FIGHTING"],
+  "baseStats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 50,
+    "spAttack": 35,
+    "spDefense": 35,
+    "speed": 35
+  },
+  "learnset": {
+    "1": "LOWKICK",
+    "2": "LEER",
+    "5": "KARATECHOP",
+    "7": "FOCUSENERGY"
+  }
+}

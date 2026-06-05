@@ -1,0 +1,17 @@
+{
+  "name": "Weedle",
+  "types": ["BUG", "POISON"],
+  "baseStats": {
+    "hp": 40,
+    "attack": 35,
+    "defense": 30,
+    "spAttack": 20,
+    "spDefense": 20,
+    "speed": 50
+  },
+  "learnset": {
+    "1": "POISONSTING",
+    "2": "STRINGSHOT",
+    "7": "BUGBITE"
+  }
+}

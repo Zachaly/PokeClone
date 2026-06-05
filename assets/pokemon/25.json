@@ -1,0 +1,17 @@
+{
+  "name": "Pikachu",
+  "types": ["ELECTRIC"],
+  "baseStats": {
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "spAttack": 50,
+    "spDefense": 50,
+    "speed": 90
+  },
+  "learnset": {
+    "1": "THUNDERSHOCK",
+    "2": "GROWL",
+    "5": "TAILWIP"
+  }
+}

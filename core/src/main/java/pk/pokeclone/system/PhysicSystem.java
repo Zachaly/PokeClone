@@ -59,7 +59,7 @@ public class PhysicSystem extends IteratingSystem implements EntityListener {
         accumulator += delta;
 
         if(accumulator >= interval) {
-            accumulator = 0;
+            accumulator -= interval;
             super.update(delta);
             world.step(interval, 6, 2);
         }

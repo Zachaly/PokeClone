@@ -1,4 +1,6 @@
-package pk.pokeclone.pokemon;
+package pk.pokeclone.pokemon.attack;
+
+import pk.pokeclone.pokemon.PokemonType;
 
 import java.util.List;
 import java.util.Map;

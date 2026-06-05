@@ -1,0 +1,9 @@
+{
+  "name": "Poison sting",
+  "type": "POISON",
+  "power": 15,
+  "attackType": "PHYSICAL",
+  "maxUses": 20,
+  "statusEffect": { "name": "POISON" },
+  "stageEffects": []
+}

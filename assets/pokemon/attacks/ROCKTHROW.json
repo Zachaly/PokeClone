@@ -1,0 +1,9 @@
+{
+  "name": "Rock throw",
+  "type": "ROCK",
+  "power": 50,
+  "attackType": "PHYSICAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

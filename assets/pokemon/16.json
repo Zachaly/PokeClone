@@ -1,0 +1,16 @@
+{
+  "name": "Pidgey",
+  "types": ["NORMAL", "FLYING"],
+  "baseStats": {
+    "hp": 40,
+    "attack": 45,
+    "defense": 40,
+    "spAttack": 35,
+    "spDefense": 35,
+    "speed": 56
+  },
+  "learnset": {
+    "1": "TACKLE",
+    "5": "GUST"
+  }
+}

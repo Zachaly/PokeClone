@@ -1,0 +1,17 @@
+{
+  "name": "Gastly",
+  "types": ["GHOST", "POISON"],
+  "baseStats": {
+    "hp": 30,
+    "attack": 35,
+    "defense": 30,
+    "spAttack": 100,
+    "spDefense": 35,
+    "speed": 80
+  },
+  "learnset": {
+    "1": "LICK",
+    "2": "PAYBACK",
+    "5": "SHADOWBALL"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Bulbasaur",
+  "types": ["GRASS", "POISON"],
+  "baseStats": {
+    "hp": 45,
+    "attack": 49,
+    "defense": 49,
+    "spAttack": 65,
+    "spDefense": 65,
+    "speed": 45
+  },
+  "learnset": {
+    "1": "TACKLE",
+    "3": "GROWL",
+    "7": "VINEWIP"
+  }
+}

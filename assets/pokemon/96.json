@@ -1,0 +1,17 @@
+{
+  "name": "Drowzee",
+  "types": ["PSYCHIC"],
+  "baseStats": {
+    "hp": 60,
+    "attack": 48,
+    "defense": 45,
+    "spAttack": 43,
+    "spDefense": 90,
+    "speed": 42
+  },
+  "learnset": {
+    "1": "POUND",
+    "2": "CONFUSION",
+    "5": "HEADBUTT"
+  }
+}

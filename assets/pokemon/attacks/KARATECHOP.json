@@ -1,0 +1,9 @@
+{
+  "name": "Karate chop",
+  "type": "FIGHTING",
+  "power": 50,
+  "attackType": "PHYSICAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

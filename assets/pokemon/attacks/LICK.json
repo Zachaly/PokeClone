@@ -1,0 +1,9 @@
+{
+  "name": "Lick",
+  "type": "GHOST",
+  "power": 20,
+  "attackType": "PHYSICAL",
+  "maxUses": 30,
+  "statusEffect": null,
+  "stageEffects": []
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Tackle",
+  "type": "GRASS",
+  "power": 45,
+  "attackType": "PHYSICAL",
+  "maxUses": 25,
+  "statusEffect": null,
+  "stageEffects": []
+}

@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import lombok.Getter;
 import pk.pokeclone.asset.AssetService;
+import pk.pokeclone.player.PlayerState;
 import pk.pokeclone.screen.LoadingScreen;
 
 import java.util.HashMap;
@@ -24,6 +25,8 @@ public class PokeClone extends Game {
     public static final float SCALE = 1f / 16;
 
     private final Map<Class<? extends Screen>, Screen> screenCache = new HashMap<>();
+    @Getter
+    private final PlayerState playerState = new PlayerState();
 
     @Getter
     private Batch batch;

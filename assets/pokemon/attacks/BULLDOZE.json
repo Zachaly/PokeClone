@@ -1,0 +1,9 @@
+{
+  "name": "Bulldoze",
+  "type": "GROUND",
+  "power": 60,
+  "attackType": "PHYSICAL",
+  "maxUses": 20,
+  "statusEffect": null,
+  "stageEffects": []
+}

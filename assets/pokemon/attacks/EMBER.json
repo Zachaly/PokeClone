@@ -1,0 +1,9 @@
+{
+  "name": "Ember",
+  "type": "FIRE",
+  "power": 40,
+  "attackType": "SPECIAL",
+  "maxUses": 25,
+  "statusEffect": { "name": "BURN" },
+  "stageEffects": []
+}

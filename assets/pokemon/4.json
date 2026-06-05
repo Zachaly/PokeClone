@@ -1,0 +1,17 @@
+{
+  "name": "Charmander",
+  "types": ["FIRE"],
+  "baseStats": {
+    "hp": 39,
+    "attack": 52,
+    "defense": 43,
+    "spAttack": 60,
+    "spDefense": 50,
+    "speed": 65
+  },
+  "learnset": {
+    "1": "SCRATCH",
+    "3": "GROWL",
+    "7": "EMBER"
+  }
+}

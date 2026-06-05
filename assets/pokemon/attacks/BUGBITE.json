@@ -1,0 +1,9 @@
+{
+  "name": "Bug bite",
+  "type": "BUG",
+  "power": 60,
+  "attackType": "PHYSICAL",
+  "maxUses": 20,
+  "statusEffect": null,
+  "stageEffects": []
+}
