@@ -13,6 +13,70 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 9,
+            "members": [
+                {
+                    "name": "interaction_type",
+                    "type": "string",
+                    "value": "POKECENTER"
+                },
+                {
+                    "name": "sensor",
+                    "type": "bool",
+                    "value": true
+                }
+            ],
+            "name": "AddInteractionTrigger",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 8,
+            "members": [
+                {
+                    "name": "level_lower_limit",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "level_upper_limit",
+                    "type": "int",
+                    "value": 0
+                },
+                {
+                    "name": "pokemon_ids",
+                    "type": "string",
+                    "value": ""
+                },
+                {
+                    "name": "sensor",
+                    "type": "bool",
+                    "value": true
+                }
+            ],
+            "name": "BattleTrigger",
+            "type": "class",
+            "useAs": [
+                "property",
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 5,
             "members": [
                 {
@@ -47,6 +111,30 @@
         {
             "color": "#ffa0a0a4",
             "drawFill": true,
+            "id": 6,
+            "members": [
+                {
+                    "name": "sensor",
+                    "type": "bool",
+                    "value": false
+                },
+                {
+                    "name": "target_map",
+                    "type": "string",
+                    "value": ""
+                }
+            ],
+            "name": "MapChangeTrigger",
+            "type": "class",
+            "useAs": [
+                "property",
+                "object",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
             "id": 4,
             "members": [
             ],
@@ -55,6 +143,55 @@
             "useAs": [
                 "property",
                 "tile",
+                "project"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "drawFill": true,
+            "id": 10,
+            "members": [
+                {
+                    "name": "animation",
+                    "type": "string",
+                    "value": "IDLE"
+                },
+                {
+                    "name": "animationSpeed",
+                    "type": "float",
+                    "value": 2
+                },
+                {
+                    "name": "atlasAsset",
+                    "type": "string",
+                    "value": "OBJECTS"
+                },
+                {
+                    "name": "cameraFollow",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "controller",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "player",
+                    "type": "bool",
+                    "value": true
+                },
+                {
+                    "name": "speed",
+                    "type": "float",
+                    "value": 7
+                }
+            ],
+            "name": "Player",
+            "type": "class",
+            "useAs": [
+                "property",
+                "object",
                 "project"
             ]
         }

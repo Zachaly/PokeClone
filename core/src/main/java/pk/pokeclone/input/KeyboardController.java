@@ -4,6 +4,8 @@ import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.utils.GdxRuntimeException;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,8 +17,7 @@ public class KeyboardController extends InputAdapter {
         Map.entry(Input.Keys.S, Command.DOWN),
         Map.entry(Input.Keys.D, Command.RIGHT),
         Map.entry(Input.Keys.SPACE, Command.SELECT),
-        Map.entry(Input.Keys.ESCAPE, Command.MENU),
-        Map.entry(Input.Keys.TAB, Command.CANCEL)
+        Map.entry(Input.Keys.ESCAPE, Command.MENU)
     );
 
     private final boolean[] commandState;

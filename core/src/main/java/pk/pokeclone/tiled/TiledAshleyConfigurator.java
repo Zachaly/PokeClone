@@ -9,16 +9,22 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.FileTextureData;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.objects.TiledMapTileMapObject;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 import lombok.AllArgsConstructor;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.AssetService;
 import pk.pokeclone.asset.AtlasAsset;
+import pk.pokeclone.asset.MapAsset;
 import pk.pokeclone.component.*;
 import pk.pokeclone.component.Transform;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 public class TiledAshleyConfigurator {
@@ -36,6 +42,8 @@ public class TiledAshleyConfigurator {
     private final Engine engine;
     private final AssetService assetService;
     private final World physicWorld;
+    private final MapObjects tmpMapObjects = new MapObjects();
+    private final Vector2 tmpVector = new Vector2();
 
     public void onLoadTile(TiledMapTile tiledMapTile, float x, float y) {
         createBody(
@@ -93,9 +101,17 @@ public class TiledAshleyConfigurator {
         addEntityPhysics(tile.getObjects(), bodyType, Vector2.Zero, entity);
         entity.add(new Facing(Facing.FacingDirection.DOWN));
         entity.add(new Fsm(entity));
+        addEntityPlayer(object, entity);
 
         engine.addEntity(entity);
     }
+
+    private void addEntityPlayer(TiledMapTileMapObject object, Entity entity) {
+        if("player".equals(object.getName())) {
+            entity.add(new Player());
+        }
+    }
+
 
     private void addEntityCameraFollow(TiledMapTile tile, Entity entity) {
         boolean cameraFollow = tile.getProperties().get(CAMERA_FOLLOW, false, Boolean.class);
@@ -111,6 +127,15 @@ public class TiledAshleyConfigurator {
         Body body = createBody(objects, transform.getPosition(), transform.getScaling(), bodyType, relativeTo, entity);
 
         entity.add(new Physic(body, transform.getPosition().cpy()));
+    }
+
+    private void addEntityPhysics(MapObject object, BodyDef.BodyType bodyType, Vector2 relativeTo, Entity entity) {
+        if(tmpMapObjects.getCount() > 0) {
+            tmpMapObjects.remove(0);
+        }
+
+        tmpMapObjects.add(object);
+        addEntityPhysics(tmpMapObjects, bodyType, relativeTo, entity);
     }
 
     private BodyDef.BodyType getObjectBodyType(TiledMapTile tile) {
@@ -178,5 +203,54 @@ public class TiledAshleyConfigurator {
         }
 
         return tile.getTextureRegion();
+    }
+
+    public void onLoadTrigger(TriggerClass triggerClass, MapObject mapObject) {
+        Entity entity = engine.createEntity();
+        Rectangle rectangle = ((RectangleMapObject)mapObject).getRectangle();
+
+        addEntityTransform(rectangle.getX(), rectangle.getY(), 0,
+            rectangle.getWidth(), rectangle.getHeight(),
+            1f, 1f, entity);
+        addEntityPhysics(
+            mapObject,
+            BodyDef.BodyType.StaticBody,
+            tmpVector.set(rectangle.getX(), rectangle.getY()).scl(PokeClone.SCALE),
+            entity);
+
+        if(triggerClass == TriggerClass.MAP_CHANGE) {
+            String mapName = mapObject.getProperties().get("target_map", "", String.class);
+            if(mapName.isEmpty()) return;
+
+            MapAsset mapAsset = MapAsset.valueOf(mapName);
+
+            entity.add(new ChangeMapTrigger(mapAsset));
+            engine.addEntity(entity);
+        } else if(triggerClass == TriggerClass.ADD_INTERACTION) {
+            String type = mapObject.getProperties().get("interaction_type", "", String.class);
+
+            if(type.isEmpty()) return;
+
+            InteractionType interactionType = InteractionType.valueOf(type);
+
+            entity.add(new AddInteractionTrigger(interactionType, null));
+
+            engine.addEntity(entity);
+        } else if(triggerClass == TriggerClass.BATTLE) {
+            Integer lowerLevel = mapObject.getProperties().get("lower_level_limit", 1, Integer.class);
+            Integer upperLevel = mapObject.getProperties().get("upper_level_limit", 1, Integer.class);
+            String pokemonIds = mapObject.getProperties().get("pokemon_ids", "", String.class);
+
+            if(pokemonIds.isEmpty()) return;
+
+            ArrayList<Integer> pokemonIdList = new ArrayList<>();
+
+            for(String id : pokemonIds.split(",")) {
+                pokemonIdList.add(Integer.valueOf(id));
+            }
+
+            entity.add(new BattleTrigger(lowerLevel, upperLevel, pokemonIdList));
+            engine.addEntity(entity);
+        }
     }
 }

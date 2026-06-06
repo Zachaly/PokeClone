@@ -6,127 +6,204 @@ filter: Nearest, Nearest
 repeat: none
 character/idle_down
   rotate: false
-  xy: 202, 66
+  xy: 202, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/idle_left
   rotate: false
-  xy: 202, 30
+  xy: 202, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/idle_right
   rotate: false
-  xy: 238, 66
+  xy: 238, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/idle_up
   rotate: false
-  xy: 238, 30
+  xy: 238, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/walk_down
   rotate: false
-  xy: 274, 66
+  xy: 310, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/walk_down
   rotate: false
-  xy: 274, 30
+  xy: 310, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 character/walk_down
   rotate: false
-  xy: 310, 66
+  xy: 346, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
 character/walk_left
   rotate: false
-  xy: 310, 30
+  xy: 346, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/walk_left
   rotate: false
-  xy: 346, 66
+  xy: 382, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 character/walk_left
   rotate: false
-  xy: 346, 30
+  xy: 382, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
 character/walk_right
   rotate: false
-  xy: 382, 66
+  xy: 418, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/walk_right
   rotate: false
-  xy: 382, 30
+  xy: 418, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 character/walk_right
   rotate: false
-  xy: 418, 66
+  xy: 454, 86
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
 character/walk_up
   rotate: false
-  xy: 418, 30
+  xy: 454, 50
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 0
 character/walk_up
   rotate: false
-  xy: 454, 66
+  xy: 102, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 character/walk_up
   rotate: false
-  xy: 454, 30
+  xy: 138, 2
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
+npc/pokecenter_lady
+  rotate: false
+  xy: 274, 86
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+npc/shop_guy
+  rotate: false
+  xy: 274, 50
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 pokecenter/pokecenter
   rotate: false
-  xy: 2, 2
+  xy: 2, 22
   size: 96, 96
   orig: 96, 96
   offset: 0, 0
   index: -1
 shop/shop
   rotate: false
-  xy: 102, 18
+  xy: 102, 38
   size: 96, 80
   orig: 96, 80
   offset: 0, 0
   index: -1
+table/table
+  rotate: false
+  xy: 490, 102
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 1
+table/table
+  rotate: false
+  xy: 2, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 2
+table/table
+  rotate: false
+  xy: 174, 18
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 3
+table/table
+  rotate: false
+  xy: 490, 82
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 4
+table/table
+  rotate: false
+  xy: 22, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 5
+table/table
+  rotate: false
+  xy: 490, 62
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 6
+table/table
+  rotate: false
+  xy: 42, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 7
+table/table
+  rotate: false
+  xy: 62, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 8
+table/table
+  rotate: false
+  xy: 82, 2
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: 9

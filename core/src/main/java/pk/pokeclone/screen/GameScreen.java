@@ -5,16 +5,20 @@ import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.MapAsset;
 import pk.pokeclone.input.GameControllerState;
 import pk.pokeclone.input.KeyboardController;
+import pk.pokeclone.pokemon.Pokemon;
 import pk.pokeclone.system.*;
 import pk.pokeclone.tiled.TiledAshleyConfigurator;
 import pk.pokeclone.tiled.TiledService;
 
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class GameScreen extends ScreenAdapter {
@@ -25,6 +29,7 @@ public class GameScreen extends ScreenAdapter {
     private final PokeClone game;
     private final World physicWorld;
     private boolean loaded = false;
+    private MapAsset nextMap = null;
 
     public GameScreen(PokeClone game) {
         engine = new Engine();
@@ -40,6 +45,9 @@ public class GameScreen extends ScreenAdapter {
         engine.addSystem(new FacingSystem());
         engine.addSystem(new PhysicSystem(physicWorld, 1/60f));
         engine.addSystem(new AnimationSystem(game.getAssetService()));
+        engine.addSystem(new ChangeMapSystem(this::changeMap));
+        engine.addSystem(new BattleTriggerSystem(game));
+        engine.addSystem(new AddInteractionTriggerSystem(this::pokecenterInteract, this::shopInteract, this::clearInteraction));
         engine.addSystem(new CameraSystem(game.getCamera()));
         engine.addSystem(new RenderSystem(game.getBatch(), game.getViewport(), game.getCamera()));
         engine.addSystem(new PhysicDebugRenderSystem(physicWorld, game.getCamera()));
@@ -60,6 +68,7 @@ public class GameScreen extends ScreenAdapter {
         tiledService.setMapChangeConsumer(renderConsumer.andThen(cameraConsumer));
         tiledService.setLoadObjectConsumer(tiledAshleyConfigurator::onLoadObject);
         tiledService.setLoadTileConsumer(tiledAshleyConfigurator::onLoadTile);
+        tiledService.setLoadTriggerConsumer(tiledAshleyConfigurator::onLoadTrigger);
 
         TiledMap map = tiledService.loadMap(MapAsset.START);
         tiledService.setMap(map);
@@ -71,6 +80,22 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         delta = Math.min(delta, 1 / 30f);
         this.engine.update(delta);
+
+        if(nextMap != null) {
+            engine.removeAllEntities();
+
+            Array<Body> bodies = new Array<>();
+            physicWorld.getBodies(bodies);
+            for(Body body : bodies) {
+                physicWorld.destroyBody(body);
+            }
+
+            game.setInputProcessor(keyboardController);
+            keyboardController.setActiveState(GameControllerState.class);
+            TiledMap map = tiledService.loadMap(nextMap);
+            tiledService.setMap(map);
+            nextMap = null;
+        }
     }
 
     @Override
@@ -82,5 +107,37 @@ public class GameScreen extends ScreenAdapter {
         }
 
         physicWorld.dispose();
+    }
+
+    private void changeMap(MapAsset mapAsset) {
+        nextMap = mapAsset;
+    }
+
+    private void pokecenterInteract() {
+        ControllerSystem controllerSystem = engine.getSystem(ControllerSystem.class);
+
+        controllerSystem.setOnSelect(new ControllerSystem.SelectEvent() {
+            @Override
+            public void onSelect() {
+
+            }
+        });
+    }
+
+    private void shopInteract() {
+        ControllerSystem controllerSystem = engine.getSystem(ControllerSystem.class);
+
+        controllerSystem.setOnSelect(new ControllerSystem.SelectEvent() {
+            @Override
+            public void onSelect() {
+
+            }
+        });
+    }
+
+    private void clearInteraction() {
+        ControllerSystem controllerSystem = engine.getSystem(ControllerSystem.class);
+
+        controllerSystem.setOnSelect(null);
     }
 }

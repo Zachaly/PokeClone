@@ -49,6 +49,41 @@
    </object>
   </objectgroup>
  </tile>
+ <tile id="826">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="13" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="828">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="3" y="0" width="13" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="878">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="13" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="880">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="3" y="0" width="13" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="930">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="931">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
+ <tile id="932">
+  <objectgroup draworder="index" id="2">
+   <object id="1" x="0" y="0" width="16" height="16"/>
+  </objectgroup>
+ </tile>
  <wangsets>
   <wangset name="road" type="corner" tile="-1">
    <wangcolor name="middle" color="#ff0000" tile="-1" probability="1"/>

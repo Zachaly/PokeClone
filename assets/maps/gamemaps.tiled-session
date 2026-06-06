@@ -14,13 +14,83 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "startmap.tmx": {
-            "scale": 4.837083333333333,
-            "selectedLayer": 1,
+        "pokecenter.tmx": {
+            "expandedObjectLayers": [
+                4,
+                5
+            ],
+            "scale": 4,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 86.93255233008873,
-                "y": 112.77457145318287
+                "x": 88.375,
+                "y": 122.375
             }
+        },
+        "pokecenter_lady.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "route_1.tmx": {
+            "expandedObjectLayers": [
+                4,
+                3
+            ],
+            "scale": 4.5347656249999995,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 36.936859333275905,
+                "y": 151.16547506245155
+            }
+        },
+        "route_2.tmx": {
+            "expandedObjectLayers": [
+                4,
+                3
+            ],
+            "scale": 4.5347656249999995,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 128.0110259281592,
+                "y": 128.01102592815923
+            }
+        },
+        "shop.tmx": {
+            "expandedObjectLayers": [
+                5,
+                6
+            ],
+            "scale": 4.5347656249999995,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 128.0110259281592,
+                "y": 128.01102592815923
+            }
+        },
+        "shop_guy.tsx": {
+            "dynamicWrapping": false,
+            "scaleInEditor": 1
+        },
+        "startmap.tmx": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 4.837083333333333,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 122.9046429494358,
+                "y": 83.00456542337842
+            }
+        },
+        "table.tsx": {
+            "dynamicWrapping": false,
+            "scaleInEditor": 1
+        },
+        "tables.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "tileset.tsx": {
             "dynamicWrapping": false,
@@ -28,12 +98,12 @@
             "scaleInEditor": 1
         }
     },
-    "last.imagePath": "D:/polibuda/PokeClone/assets/player",
-    "map.height": 15,
+    "last.imagePath": "D:/polibuda/PokeClone/assets/maps/objects",
+    "map.height": 16,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 15,
+    "map.width": 16,
     "openFiles": [
         "startmap.tmx",
         "tileset.tsx",
@@ -41,17 +111,23 @@
         "objects.tsx"
     ],
     "project": "gamemaps.tiled-project",
-    "property.type": "bool",
+    "property.type": "string",
     "recentFiles": [
-        "objects.tsx",
         "character.tsx",
+        "route_2.tmx",
+        "route_1.tmx",
+        "shop_guy.tsx",
+        "pokecenter_lady.tsx",
+        "table.tsx",
+        "objects.tsx",
+        "tables.tsx",
         "tileset.tsx",
         "startmap.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 32,
-        "width": 32
+        "height": 16,
+        "width": 16
     },
     "tileset.type": 0
 }

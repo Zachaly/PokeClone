@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="99">
+ <tileset firstgid="1" source="tileset.tsx"/>
+ <tileset firstgid="1301" source="character.tsx"/>
+ <layer id="1" name="Warstwa Kafelków 1" width="16" height="16">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,53,54,54,54,54,54,54,54,54,54,54,
+1,1,1,1,1,105,106,106,106,106,106,106,106,106,106,106,
+1,1,1,1,1,105,106,56,158,158,158,158,158,158,158,158,
+1,1,1,1,1,105,106,107,1,1,1,1,1,1,1,1,
+1,1,1,1,1,105,106,107,1,1,1,1,1,1,1,1,
+1,1,1,1,1,157,158,159,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="2" name="Warstwa Kafelków 2" width="16" height="16">
+  <data encoding="csv">
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,7,7,7,7,7,7,7,7,7,7,7,
+0,0,0,0,0,7,7,7,7,7,7,7,7,7,7,7,
+0,0,0,0,0,7,7,7,7,7,7,7,7,7,7,7,
+0,0,0,0,0,7,7,7,7,7,7,7,7,7,7,7,
+0,0,0,0,0,7,7,7,7,7,7,7,7,7,7,7
+</data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="1" name="player" type="Player" gid="1301" x="214.883" y="92.0789" width="32" height="32">
+   <properties>
+    <property name="speed" type="float" value="7"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="trigger">
+  <object id="3" type="MapChangeTrigger" x="248.965" y="64.1709" width="6.17452" height="47.632">
+   <properties>
+    <property name="target_map" value="START"/>
+   </properties>
+  </object>
+  <object id="4" type="BattleTrigger" x="1.30451e-15" y="-0.441037" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="5" type="BattleTrigger" x="15.9876" y="-0.220532" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="6" type="BattleTrigger" x="32.0854" y="-0.220532" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="7" type="BattleTrigger" x="47.9628" y="-0.661569" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="8" type="BattleTrigger" x="47.7422" y="15.4363" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="9" type="BattleTrigger" x="31.8649" y="15.2158" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="10" type="BattleTrigger" x="15.5465" y="15.4363" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="11" type="BattleTrigger" x="-0.110282" y="16.0978" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="12" type="BattleTrigger" x="-0.110282" y="32.4162" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="13" type="BattleTrigger" x="15.7671" y="31.9752" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="14" type="BattleTrigger" x="31.4239" y="31.5341" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="15" type="BattleTrigger" x="47.7422" y="31.0931" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="16" type="BattleTrigger" x="47.3012" y="47.632" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="17" type="BattleTrigger" x="31.4239" y="48.073" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="18" type="BattleTrigger" x="15.7671" y="47.632" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="19" type="BattleTrigger" x="-0.3308" y="47.632" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="20" type="BattleTrigger" x="-0.551319" y="64.1709" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="21" type="BattleTrigger" x="-0.551319" y="79.8277" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="22" type="BattleTrigger" x="-0.110282" y="95.9256" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="23" type="BattleTrigger" x="0.330755" y="111.582" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="24" type="BattleTrigger" x="0.330755" y="127.901" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="25" type="BattleTrigger" x="-0.110282" y="143.558" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="26" type="BattleTrigger" x="15.326" y="63.7299" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="27" type="BattleTrigger" x="15.5465" y="79.8277" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="28" type="BattleTrigger" x="15.9876" y="95.705" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="29" type="BattleTrigger" x="15.5465" y="111.582" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="30" type="BattleTrigger" x="15.326" y="127.901" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="31" type="BattleTrigger" x="15.326" y="143.999" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="32" type="BattleTrigger" x="31.6444" y="143.999" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="33" type="BattleTrigger" x="47.5217" y="143.778" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="34" type="BattleTrigger" x="47.7422" y="127.46" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="35" type="BattleTrigger" x="32.0854" y="127.68" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="36" type="BattleTrigger" x="31.2034" y="111.803" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="37" type="BattleTrigger" x="47.7422" y="111.362" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="38" type="BattleTrigger" x="47.7422" y="95.4845" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="39" type="BattleTrigger" x="48.1833" y="79.6072" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="40" type="BattleTrigger" x="48.4038" y="63.5093" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="41" type="BattleTrigger" x="32.0854" y="63.2888" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="42" type="BattleTrigger" x="31.8649" y="79.6072" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="43" type="BattleTrigger" x="31.8649" y="95.4845" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="74,92"/>
+   </properties>
+  </object>
+  <object id="44" type="BattleTrigger" x="79.938" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="45" type="BattleTrigger" x="95.8153" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="46" type="BattleTrigger" x="111.472" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="47" type="BattleTrigger" x="127.79" y="175.753" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="48" type="BattleTrigger" x="143.668" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="49" type="BattleTrigger" x="159.325" y="175.753" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="50" type="BattleTrigger" x="176.084" y="175.753" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="51" type="BattleTrigger" x="191.741" y="175.312" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="52" type="BattleTrigger" x="207.839" y="175.312" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="53" type="BattleTrigger" x="224.378" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="54" type="BattleTrigger" x="239.814" y="175.533" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="55" type="BattleTrigger" x="79.938" y="191.19" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="56" type="BattleTrigger" x="95.3743" y="191.631" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="57" type="BattleTrigger" x="111.693" y="191.41" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="58" type="BattleTrigger" x="127.79" y="191.631" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="59" type="BattleTrigger" x="143.668" y="191.41" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="60" type="BattleTrigger" x="159.545" y="191.41" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="61" type="BattleTrigger" x="175.422" y="191.851" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="62" type="BattleTrigger" x="191.52" y="191.19" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="63" type="BattleTrigger" x="207.177" y="191.631" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="64" type="BattleTrigger" x="223.055" y="191.41" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="65" type="BattleTrigger" x="239.152" y="191.41" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="66" type="BattleTrigger" x="80.1585" y="207.287" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="67" type="BattleTrigger" x="95.5948" y="207.728" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="68" type="BattleTrigger" x="111.693" y="208.17" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="69" type="BattleTrigger" x="127.57" y="207.728" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="70" type="BattleTrigger" x="144.109" y="207.508" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="71" type="BattleTrigger" x="159.545" y="207.508" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="72" type="BattleTrigger" x="175.643" y="208.17" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="73" type="BattleTrigger" x="191.079" y="207.508" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="74" type="BattleTrigger" x="207.398" y="207.287" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="75" type="BattleTrigger" x="223.055" y="207.728" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="76" type="BattleTrigger" x="239.152" y="207.508" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="77" type="BattleTrigger" x="80.1585" y="223.385" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="78" type="BattleTrigger" x="95.5948" y="224.047" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="79" type="BattleTrigger" x="111.693" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="80" type="BattleTrigger" x="127.79" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="81" type="BattleTrigger" x="144.329" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="82" type="BattleTrigger" x="159.545" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="83" type="BattleTrigger" x="174.981" y="224.047" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="84" type="BattleTrigger" x="191.3" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="85" type="BattleTrigger" x="207.398" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="86" type="BattleTrigger" x="223.496" y="223.826" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="87" type="BattleTrigger" x="239.373" y="223.606" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="88" type="BattleTrigger" x="79.938" y="239.924" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="89" type="BattleTrigger" x="95.3743" y="239.483" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="90" type="BattleTrigger" x="111.472" y="239.263" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="91" type="BattleTrigger" x="128.452" y="239.483" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="92" type="BattleTrigger" x="143.888" y="239.924" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="93" type="BattleTrigger" x="159.104" y="239.704" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="94" type="BattleTrigger" x="175.202" y="239.704" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="95" type="BattleTrigger" x="191.52" y="239.263" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="96" type="BattleTrigger" x="207.839" y="239.704" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="97" type="BattleTrigger" x="223.937" y="239.924" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+  <object id="98" type="BattleTrigger" x="239.373" y="239.924" width="16.0979" height="16.3184">
+   <properties>
+    <property name="level_lower_limit" type="int" value="4"/>
+    <property name="level_upper_limit" type="int" value="6"/>
+    <property name="pokemon_ids" value="66,96"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

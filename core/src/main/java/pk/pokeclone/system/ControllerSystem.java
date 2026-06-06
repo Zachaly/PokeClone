@@ -3,6 +3,7 @@ package pk.pokeclone.system;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
+import lombok.Setter;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.component.Controller;
 import pk.pokeclone.component.Move;
@@ -12,6 +13,9 @@ import pk.pokeclone.screen.MenuScreen;
 public class ControllerSystem extends IteratingSystem {
 
     private final PokeClone game;
+
+    @Setter
+    private SelectEvent onSelect = null;
 
     public ControllerSystem(PokeClone game) {
         super(Family.all(Controller.class).get());
@@ -33,6 +37,11 @@ public class ControllerSystem extends IteratingSystem {
                 case LEFT -> moveEntity(entity, -1f, 0f);
                 case RIGHT -> moveEntity(entity, 1f, 0f);
                 case MENU -> game.setScreen(MenuScreen.class);
+                case SELECT -> {
+                    if(onSelect != null) {
+                        onSelect.onSelect();
+                    }
+                }
             }
         }
 
@@ -57,5 +66,10 @@ public class ControllerSystem extends IteratingSystem {
 
         move.getDirection().x += directionX;
         move.getDirection().y += directionY;
+    }
+
+    @FunctionalInterface
+    public interface SelectEvent {
+        void onSelect();
     }
 }

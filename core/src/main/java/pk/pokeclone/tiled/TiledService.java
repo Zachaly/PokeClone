@@ -2,6 +2,7 @@ package pk.pokeclone.tiled;
 
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTile;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
@@ -17,6 +18,7 @@ import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.AssetService;
 import pk.pokeclone.asset.MapAsset;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class TiledService {
@@ -29,6 +31,8 @@ public class TiledService {
     private Consumer<TiledMapTileMapObject> loadObjectConsumer = null;
     @Setter
     private LoadTileConsumer loadTileConsumer = null;
+    @Setter
+    private BiConsumer<TriggerClass, RectangleMapObject> loadTriggerConsumer = null;
 
     public TiledService(AssetService assetService, World world) {
         this.assetService = assetService;
@@ -61,10 +65,32 @@ public class TiledService {
                 loadObjectLayer(layer);
             } else if(layer instanceof TiledMapTileLayer tileLayer) {
                 loadTileLayer(tileLayer);
+            } else if("trigger".equals(layer.getName())) {
+                loadTriggerLayer(layer);
             }
         }
 
         spawnMapBoundary(map);
+    }
+
+    private void loadTriggerLayer(MapLayer layer) {
+        if(loadTriggerConsumer == null) return;
+
+        for(MapObject mapObject : layer.getObjects()) {
+            if(mapObject instanceof RectangleMapObject rectMapObj) {
+                String map = rectMapObj.getProperties().get("target_map", "", String.class);
+                if(!map.isEmpty()) {
+                    loadTriggerConsumer.accept(TriggerClass.MAP_CHANGE, rectMapObj);
+                    continue;
+                }
+                String interactionType = rectMapObj.getProperties().get("interaction_type", "", String.class);
+                if(!interactionType.isEmpty()) {
+                    loadTriggerConsumer.accept(TriggerClass.ADD_INTERACTION, rectMapObj);
+                } else {
+                    loadTriggerConsumer.accept(TriggerClass.BATTLE, rectMapObj);
+                }
+            }
+        }
     }
 
     private void spawnMapBoundary(TiledMap map) {
@@ -125,7 +151,7 @@ public class TiledService {
         if(loadObjectConsumer == null) return;
 
         for(MapObject object : objectLayer.getObjects()) {
-            if(object instanceof  TiledMapTileMapObject tileMapObject) {
+            if(object instanceof TiledMapTileMapObject tileMapObject) {
                 loadObjectConsumer.accept(tileMapObject);
             } else {
                 throw new GdxRuntimeException("Invalid object");

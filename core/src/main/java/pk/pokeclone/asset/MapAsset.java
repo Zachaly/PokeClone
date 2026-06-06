@@ -5,7 +5,11 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 public enum MapAsset implements Asset<TiledMap> {
-    START("startmap.tmx");
+    START("startmap.tmx"),
+    ROUTE_1("route_1.tmx"),
+    ROUTE_2("route_2.tmx"),
+    POKECENTER("pokecenter.tmx"),
+    SHOP("shop.tmx");
 
     private final AssetDescriptor<TiledMap> descriptor;
 
