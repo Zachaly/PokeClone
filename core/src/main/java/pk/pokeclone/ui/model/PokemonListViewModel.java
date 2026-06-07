@@ -10,7 +10,7 @@ import pk.pokeclone.screen.PokemonScreen;
 
 import java.util.List;
 
-public class PokemonListViewModel extends ViewModel{
+public class PokemonListViewModel extends ViewModel {
 
     private PlayerState playerState;
 
@@ -60,7 +60,9 @@ public class PokemonListViewModel extends ViewModel{
             return;
         }
 
-        potion.use(pokemon);
+        if(!potion.use(pokemon)) {
+            playerState.getItems().add(potion);
+        }
     }
 
     public void unpoisonPokemon(Pokemon pokemon) {
@@ -74,6 +76,9 @@ public class PokemonListViewModel extends ViewModel{
             return;
         }
 
-        antidote.use(pokemon);
+
+        if(!antidote.use(pokemon)) {
+            playerState.getItems().add(antidote);
+        }
     }
 }

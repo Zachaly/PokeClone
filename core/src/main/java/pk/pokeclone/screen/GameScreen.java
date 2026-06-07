@@ -119,7 +119,7 @@ public class GameScreen extends ScreenAdapter {
         controllerSystem.setOnSelect(new ControllerSystem.SelectEvent() {
             @Override
             public void onSelect() {
-
+                game.setScreen(PokecenterScreen.class);
             }
         });
     }
@@ -130,7 +130,7 @@ public class GameScreen extends ScreenAdapter {
         controllerSystem.setOnSelect(new ControllerSystem.SelectEvent() {
             @Override
             public void onSelect() {
-
+                game.setScreen(ShopScreen.class);
             }
         });
     }

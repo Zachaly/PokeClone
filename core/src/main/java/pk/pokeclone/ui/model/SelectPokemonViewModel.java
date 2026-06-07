@@ -14,6 +14,7 @@ public class SelectPokemonViewModel extends ViewModel {
 
     public void startGame(StartPokemon pokemon) {
         game.getPlayerState().addPokemon(Pokemon.load(pokemon.getIndex(), 5));
+
         game.setScreen(GameScreen.class);
     }
 

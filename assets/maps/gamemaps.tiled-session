@@ -1,5 +1,5 @@
 {
-    "activeFile": "startmap.tmx",
+    "activeFile": "route_2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -69,6 +69,7 @@
         },
         "shop_guy.tsx": {
             "dynamicWrapping": false,
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "startmap.tmx": {
@@ -85,6 +86,7 @@
         },
         "table.tsx": {
             "dynamicWrapping": false,
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "tables.tsx": {
@@ -107,22 +109,26 @@
     "openFiles": [
         "startmap.tmx",
         "tileset.tsx",
-        "character.tsx",
-        "objects.tsx"
+        "pokecenter.tmx",
+        "shop.tmx",
+        "route_1.tmx",
+        "route_2.tmx"
     ],
     "project": "gamemaps.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "character.tsx",
-        "route_2.tmx",
+        "startmap.tmx",
+        "tileset.tsx",
+        "pokecenter.tmx",
+        "shop.tmx",
         "route_1.tmx",
+        "route_2.tmx",
+        "character.tsx",
         "shop_guy.tsx",
         "pokecenter_lady.tsx",
         "table.tsx",
         "objects.tsx",
-        "tables.tsx",
-        "tileset.tsx",
-        "startmap.tmx"
+        "tables.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

@@ -6,7 +6,7 @@ import pk.pokeclone.pokemon.Pokemon;
 
 public class Potion extends Item {
     public Potion() {
-        super("Potion");
+        super("Potion", 100);
     }
 
     @Override

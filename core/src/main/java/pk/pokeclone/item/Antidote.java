@@ -9,11 +9,15 @@ import java.util.Objects;
 public class Antidote extends Item {
 
     public Antidote() {
-        super("Antidote");
+        super("Antidote", 100);
     }
 
     @Override
     public boolean use(Pokemon pokemon) {
+        if(pokemon.getStatusEffect() == null) {
+            return false;
+        }
+
         if(Objects.equals(pokemon.getStatusEffect().getName(), StatusEffect.POISON)) {
             pokemon.setStatusEffect(null);
         }

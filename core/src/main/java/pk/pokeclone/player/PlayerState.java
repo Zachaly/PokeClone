@@ -9,12 +9,14 @@ import java.util.*;
 @Getter
 public class PlayerState {
     private final List<Pokemon> pokemons;
+    private final List<Pokemon> boxedPokemons;
     private final List<Item> items;
     private int money = 1000;
 
     public PlayerState() {
         pokemons = new ArrayList<>();
         items = new ArrayList<>();
+        boxedPokemons = new ArrayList<>();
     }
 
     public boolean addPokemon(Pokemon pokemon) {

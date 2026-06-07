@@ -29,6 +29,9 @@ public class PokemonView extends View<PokemonViewModel> {
         Label label = new Label("LEVEL " + pokemon.getLevel(), skin);
         verticalGroup.addActor(label);
 
+        label = new Label("EXP " + pokemon.getExperience(), skin);
+        verticalGroup.addActor(label);
+
         label = new Label("HP" + pokemon.getHealth() + "/" + pokemon.getMaxHealth(), skin);
         verticalGroup.addActor(label);
 

@@ -10,6 +10,7 @@ import pk.pokeclone.pokemon.Pokemon;
 @NoArgsConstructor
 public abstract class Item {
     private String name;
+    private int price;
 
     public abstract boolean use(Pokemon pokemon);
 }
