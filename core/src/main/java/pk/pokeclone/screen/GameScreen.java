@@ -13,12 +13,10 @@ import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.MapAsset;
 import pk.pokeclone.input.GameControllerState;
 import pk.pokeclone.input.KeyboardController;
-import pk.pokeclone.pokemon.Pokemon;
 import pk.pokeclone.system.*;
 import pk.pokeclone.tiled.TiledAshleyConfigurator;
 import pk.pokeclone.tiled.TiledService;
 
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class GameScreen extends ScreenAdapter {
@@ -50,7 +48,8 @@ public class GameScreen extends ScreenAdapter {
         engine.addSystem(new AddInteractionTriggerSystem(this::pokecenterInteract, this::shopInteract, this::clearInteraction));
         engine.addSystem(new CameraSystem(game.getCamera()));
         engine.addSystem(new RenderSystem(game.getBatch(), game.getViewport(), game.getCamera()));
-        engine.addSystem(new PhysicDebugRenderSystem(physicWorld, game.getCamera()));
+        // uncomment to see collision boxes
+        //engine.addSystem(new PhysicDebugRenderSystem(physicWorld, game.getCamera()));
 
         tiledAshleyConfigurator = new TiledAshleyConfigurator(engine, game.getAssetService(), physicWorld);
     }

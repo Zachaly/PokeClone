@@ -3,7 +3,6 @@ package pk.pokeclone.ui.model;
 import lombok.Getter;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.pokemon.Pokemon;
-import pk.pokeclone.pokemon.attack.StatusEffect;
 import pk.pokeclone.screen.GameScreen;
 
 public class SelectPokemonViewModel extends ViewModel {

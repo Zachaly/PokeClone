@@ -29,30 +29,30 @@ public class BattleView extends View<BattleViewModel>{
             return;
         }
 
-        Table table1 = new Table();
-        table1.setBackground(skin.getDrawable("BackgroundScroll"));
+        Table table = new Table();
+        table.setBackground(skin.getDrawable("BackgroundScroll"));
 
         String nameLabel = String.format("%s lvl %d", viewModel.getCurrentPlayerPokemon().getDescription().getName(),
             viewModel.getCurrentPlayerPokemon().getLevel());
         Label label = new Label(nameLabel, skin);
-        table1.add(label);
+        table.add(label);
 
         nameLabel = String.format("%s lvl %d", viewModel.getAttackerPokemon().getDescription().getName(),
             viewModel.getAttackerPokemon().getLevel());
 
         label = new Label(nameLabel, skin);
-        table1.add(label);
-        table1.row();
+        table.add(label);
+        table.row();
 
         ProgressBar progressBar = new ProgressBar(0.0f, viewModel.getCurrentPlayerPokemon().getMaxHealth(), 1.0f, false, skin);
         progressBar.setValue(viewModel.getCurrentPlayerPokemon().getHealth());
-        table1.add(progressBar);
+        table.add(progressBar);
 
         progressBar = new ProgressBar(0.0f, viewModel.getAttackerPokemon().getMaxHealth(), 1.0f, false, skin);
         progressBar.setValue(viewModel.getAttackerPokemon().getHealth());
-        table1.add(progressBar);
+        table.add(progressBar);
 
-        table1.row();
+        table.row();
         StatusEffect playerStatusEffect = viewModel.getCurrentPlayerPokemon().getStatusEffect();
         StatusEffect attackerStatusEffect = viewModel.getAttackerPokemon().getStatusEffect();
 
@@ -67,18 +67,18 @@ public class BattleView extends View<BattleViewModel>{
         }
 
         label = new Label(playerStatusEffectName, skin);
-        table1.add(label);
+        table.add(label);
 
         label = new Label(attackerStatusEffectName, skin);
-        table1.add(label);
+        table.add(label);
 
-        table1.row();
+        table.row();
         Image image = new Image(skin, String.valueOf(viewModel.getCurrentPlayerPokemon().getPokedexIndex()));
-        table1.add(image);
+        table.add(image);
 
         image = new Image(skin, String.valueOf(viewModel.getAttackerPokemon().getPokedexIndex()));
-        table1.add(image);
-        table1.row();
+        table.add(image);
+        table.row();
 
         VerticalGroup verticalGroup = new VerticalGroup();
 
@@ -88,15 +88,15 @@ public class BattleView extends View<BattleViewModel>{
             verticalGroup.addActor(label);
 
         }
-        table1.add(verticalGroup).align(Align.center).fillX();
+        table.add(verticalGroup).align(Align.center).fillX();
 
-        add(table1);
+        add(table);
         row();
 
-        table1 = new Table();
-        table1.setBackground(skin.getDrawable("DialogBox"));
-        table1.padTop(20.0f);
-        table1.padBottom(20.0f);
+        table = new Table();
+        table.setBackground(skin.getDrawable("DialogBox"));
+        table.padTop(20.0f);
+        table.padBottom(20.0f);
 
         Table table2 = new Table();
 
@@ -117,7 +117,7 @@ public class BattleView extends View<BattleViewModel>{
             i++;
         }
 
-        table1.add(table2);
+        table.add(table2);
 
         HorizontalGroup horizontalGroup = new HorizontalGroup();
 
@@ -143,8 +143,8 @@ public class BattleView extends View<BattleViewModel>{
         textButton = new TextButton("RUN", skin);
         onClick(textButton, viewModel::run);
         verticalGroup.addActor(textButton);
-        table1.add(verticalGroup);
-        add(table1);
+        table.add(verticalGroup);
+        add(table);
     }
 
     private void swapPokemonScreenRender() {

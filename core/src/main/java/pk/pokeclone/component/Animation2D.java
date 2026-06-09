@@ -20,7 +20,7 @@ public class Animation2D implements Component {
     @Getter
     private Facing.FacingDirection direction;
     @Getter
-    private Animation.PlayMode playMode;
+    private final Animation.PlayMode playMode;
     @Setter
     private float speed;
     private float stateTime;

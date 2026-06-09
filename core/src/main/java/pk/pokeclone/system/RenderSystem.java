@@ -16,6 +16,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.component.Graphic;
 import pk.pokeclone.component.Transform;
+import pk.pokeclone.tiled.TiledPropertyNames;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -93,7 +94,7 @@ public class RenderSystem extends SortedIteratingSystem implements Disposable {
         bgLayers.clear();
         List<MapLayer> currentLayers = bgLayers;
         for(MapLayer layer : map.getLayers()) {
-            if("objects".equals(layer.getName())) {
+            if(TiledPropertyNames.OBJECTS.equals(layer.getName())) {
                 currentLayers = fgLayers;
                 continue;
             }

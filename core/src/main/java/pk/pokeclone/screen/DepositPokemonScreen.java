@@ -9,9 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
 import pk.pokeclone.ui.model.DepositPokemonViewModel;
-import pk.pokeclone.ui.model.PokecenterViewModel;
 import pk.pokeclone.ui.view.DepositPokemonView;
-import pk.pokeclone.ui.view.PokecenterView;
 
 public class DepositPokemonScreen extends ScreenAdapter {
     private final PokeClone game;

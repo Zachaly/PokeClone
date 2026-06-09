@@ -41,13 +41,13 @@ public class TiledService {
 
     public TiledMap loadMap(MapAsset mapAsset) {
         TiledMap map = this.assetService.load(mapAsset);
-        map.getProperties().put("mapAsset", mapAsset);
+        map.getProperties().put(TiledPropertyNames.MAP_ASSET, mapAsset);
         return map;
     }
 
     public void setMap(TiledMap map) {
         if(currentMap != map && currentMap != null) {
-            assetService.unload(currentMap.getProperties().get("mapAsset", MapAsset.class));
+            assetService.unload(currentMap.getProperties().get(TiledPropertyNames.MAP_ASSET, MapAsset.class));
         }
 
         currentMap = map;
@@ -61,11 +61,11 @@ public class TiledService {
 
     private void loadMapObjects(TiledMap map) {
         for(MapLayer layer : map.getLayers()) {
-            if("objects".equals(layer.getName())) {
+            if(TiledPropertyNames.OBJECTS.toLowerCase().equals(layer.getName())) {
                 loadObjectLayer(layer);
             } else if(layer instanceof TiledMapTileLayer tileLayer) {
                 loadTileLayer(tileLayer);
-            } else if("trigger".equals(layer.getName())) {
+            } else if(TiledPropertyNames.TRIGGER.equals(layer.getName())) {
                 loadTriggerLayer(layer);
             }
         }
@@ -78,12 +78,12 @@ public class TiledService {
 
         for(MapObject mapObject : layer.getObjects()) {
             if(mapObject instanceof RectangleMapObject rectMapObj) {
-                String map = rectMapObj.getProperties().get("target_map", "", String.class);
+                String map = rectMapObj.getProperties().get(TiledPropertyNames.TARGET_MAP, "", String.class);
                 if(!map.isEmpty()) {
                     loadTriggerConsumer.accept(TriggerClass.MAP_CHANGE, rectMapObj);
                     continue;
                 }
-                String interactionType = rectMapObj.getProperties().get("interaction_type", "", String.class);
+                String interactionType = rectMapObj.getProperties().get(TiledPropertyNames.INTERACTION_TYPE, "", String.class);
                 if(!interactionType.isEmpty()) {
                     loadTriggerConsumer.accept(TriggerClass.ADD_INTERACTION, rectMapObj);
                 } else {
@@ -94,10 +94,10 @@ public class TiledService {
     }
 
     private void spawnMapBoundary(TiledMap map) {
-        int width = map.getProperties().get("width", 0, Integer.class);
-        int height = map.getProperties().get("height", 0, Integer.class);
-        int tileWidth = map.getProperties().get("tilewidth", 0, Integer.class);
-        int tileHeight = map.getProperties().get("tileheight", 0, Integer.class);
+        int width = map.getProperties().get(TiledPropertyNames.WIDTH, 0, Integer.class);
+        int height = map.getProperties().get(TiledPropertyNames.HEIGHT, 0, Integer.class);
+        int tileWidth = map.getProperties().get(TiledPropertyNames.TILEWIDTH, 0, Integer.class);
+        int tileHeight = map.getProperties().get(TiledPropertyNames.TILEHEIGHT, 0, Integer.class);
 
         float mapWidth = width * tileWidth * PokeClone.SCALE;
         float mapHeight = height * tileHeight * PokeClone.SCALE;

@@ -10,6 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.component.CameraFollow;
 import pk.pokeclone.component.Transform;
+import pk.pokeclone.tiled.TiledPropertyNames;
 
 public class CameraSystem extends IteratingSystem {
     private final static float SMOOTHING = 4f;
@@ -60,10 +61,10 @@ public class CameraSystem extends IteratingSystem {
     }
 
     public void setMap(TiledMap map) {
-        int width = map.getProperties().get("width", 0, Integer.class);
-        int height = map.getProperties().get("height", 0, Integer.class);
-        int tileWidth = map.getProperties().get("tilewidth", 0, Integer.class);
-        int tileHeight = map.getProperties().get("tileheight", 0, Integer.class);
+        int width = map.getProperties().get(TiledPropertyNames.WIDTH, 0, Integer.class);
+        int height = map.getProperties().get(TiledPropertyNames.HEIGHT, 0, Integer.class);
+        int tileWidth = map.getProperties().get(TiledPropertyNames.TILEWIDTH, 0, Integer.class);
+        int tileHeight = map.getProperties().get(TiledPropertyNames.TILEHEIGHT, 0, Integer.class);
 
         mapWidth = width * tileWidth * PokeClone.SCALE;
         mapHeight = height * tileHeight * PokeClone.SCALE;

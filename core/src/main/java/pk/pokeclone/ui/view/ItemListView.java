@@ -7,7 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import pk.pokeclone.item.Antidote;
-import pk.pokeclone.item.Pokeball;
 import pk.pokeclone.item.Potion;
 import pk.pokeclone.ui.model.ItemListViewModel;
 

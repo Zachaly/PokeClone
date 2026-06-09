@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Disposable;
-import lombok.AllArgsConstructor;
 
 public class PhysicDebugRenderSystem extends EntitySystem implements Disposable {
     private final World physicWorld;

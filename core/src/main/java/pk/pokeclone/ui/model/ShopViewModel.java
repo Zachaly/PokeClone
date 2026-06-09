@@ -3,9 +3,7 @@ package pk.pokeclone.ui.model;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.item.Item;
 import pk.pokeclone.screen.GameScreen;
-import pk.pokeclone.screen.MenuScreen;
 
-import java.util.List;
 import java.util.Map;
 
 public class ShopViewModel extends ViewModel{

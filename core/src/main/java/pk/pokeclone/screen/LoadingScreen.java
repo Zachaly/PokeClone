@@ -3,7 +3,6 @@ package pk.pokeclone.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import lombok.AllArgsConstructor;
-import lombok.With;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.AssetService;
 import pk.pokeclone.asset.AtlasAsset;

@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.item.Antidote;
-import pk.pokeclone.item.Item;
 import pk.pokeclone.item.Pokeball;
 import pk.pokeclone.item.Potion;
 import pk.pokeclone.pokemon.Pokemon;
@@ -77,7 +76,7 @@ public class BattleViewModel extends ViewModel {
             forceSwap = true;
         }
         if(attackerPokemon.getHealth() < 1) {
-            game.battleEnded(currentPlayerPokemon, attackerPokemon.getLevel() * 40);
+            game.battleEnded(currentPlayerPokemon, attackerPokemon.expYield());
         }
 
         return false;

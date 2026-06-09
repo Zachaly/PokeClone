@@ -1,8 +1,6 @@
 package pk.pokeclone.item;
 
-import lombok.AllArgsConstructor;
 import pk.pokeclone.pokemon.Pokemon;
-
 
 public class Potion extends Item {
     public Potion() {

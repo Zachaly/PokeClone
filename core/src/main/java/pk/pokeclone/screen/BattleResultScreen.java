@@ -11,9 +11,7 @@ import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
 import pk.pokeclone.pokemon.Pokemon;
 import pk.pokeclone.ui.model.BattleResultViewModel;
-import pk.pokeclone.ui.model.BattleViewModel;
 import pk.pokeclone.ui.view.BattleResultView;
-import pk.pokeclone.ui.view.BattleView;
 
 public class BattleResultScreen extends ScreenAdapter {
     private final PokeClone game;

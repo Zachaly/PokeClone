@@ -24,20 +24,10 @@ import pk.pokeclone.component.*;
 import pk.pokeclone.component.Transform;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 public class TiledAshleyConfigurator {
     private static final Vector2 DEFAULT_PHYSIC_SCALING = new Vector2(1, 1);
-
-    public static final String CAMERA_FOLLOW = "cameraFollow";
-    public static final String TYPE = "type";
-    public static final String ANIMATION = "animation";
-    public static final String ATLAS_ASSET = "atlasAsset";
-    public static final String OBJECTS = "OBJECTS";
-    public static final String ANIMATION_SPEED = "animationSpeed";
-    public static final String SPEED = "speed";
-    public static final String CONTROLLER = "controller";
 
     private final Engine engine;
     private final AssetService assetService;
@@ -83,7 +73,7 @@ public class TiledAshleyConfigurator {
         Entity entity = engine.createEntity();
         TiledMapTile tile = object.getTile();
         TextureRegion region = getTextureRegion(tile);
-        int z = tile.getProperties().get("z", 1, Integer.class);
+        int z = tile.getProperties().get(TiledPropertyNames.Z, 1, Integer.class);
 
         entity.add(new Graphic(region, Color.WHITE.cpy()));
         addEntityTransform(
@@ -107,14 +97,13 @@ public class TiledAshleyConfigurator {
     }
 
     private void addEntityPlayer(TiledMapTileMapObject object, Entity entity) {
-        if("player".equals(object.getName())) {
+        if(TiledPropertyNames.PLAYER.equals(object.getName())) {
             entity.add(new Player());
         }
     }
 
-
     private void addEntityCameraFollow(TiledMapTile tile, Entity entity) {
-        boolean cameraFollow = tile.getProperties().get(CAMERA_FOLLOW, false, Boolean.class);
+        boolean cameraFollow = tile.getProperties().get(TiledPropertyNames.CAMERA_FOLLOW, false, Boolean.class);
         if(!cameraFollow) return;
 
         entity.add(new CameraFollow());
@@ -139,9 +128,9 @@ public class TiledAshleyConfigurator {
     }
 
     private BodyDef.BodyType getObjectBodyType(TiledMapTile tile) {
-        String classType = tile.getProperties().get(TYPE, "", String.class);
+        String classType = tile.getProperties().get(TiledPropertyNames.TYPE, "", String.class);
 
-        if("Prop".equals(classType)) {
+        if(TiledPropertyNames.PROP.equals(classType)) {
             return BodyDef.BodyType.StaticBody;
         }
 
@@ -149,23 +138,23 @@ public class TiledAshleyConfigurator {
     }
 
     private void addEntityAnimation(TiledMapTile tile, Entity entity) {
-        String animationString = tile.getProperties().get(ANIMATION, "", String.class);
+        String animationString = tile.getProperties().get(TiledPropertyNames.ANIMATION, "", String.class);
         if(animationString.isBlank()) {
             return;
         }
 
         Animation2D.AnimationType type = Animation2D.AnimationType.valueOf(animationString);
-        String atlasAssetString = tile.getProperties().get(ATLAS_ASSET, OBJECTS, String.class);
+        String atlasAssetString = tile.getProperties().get(TiledPropertyNames.ATLAS_ASSET, TiledPropertyNames.OBJECTS, String.class);
         AtlasAsset asset = AtlasAsset.valueOf(atlasAssetString);
         FileTextureData textureData = (FileTextureData)tile.getTextureRegion().getTexture().getTextureData();
         String atlasKey = textureData.getFileHandle().nameWithoutExtension();
-        float speed = tile.getProperties().get(ANIMATION_SPEED, 0f, Float.class);
+        float speed = tile.getProperties().get(TiledPropertyNames.ANIMATION_SPEED, 0f, Float.class);
 
         entity.add(new Animation2D(asset, atlasKey, type, Animation.PlayMode.LOOP, speed));
     }
 
     private void addEntityMove(TiledMapTile tile, Entity entity) {
-        float speed = tile.getProperties().get(SPEED, 0f, Float.class);
+        float speed = tile.getProperties().get(TiledPropertyNames.SPEED, 0f, Float.class);
 
         if(speed == 0) return;
 
@@ -173,7 +162,7 @@ public class TiledAshleyConfigurator {
     }
 
     private void addEntityController(TiledMapTile tile, Entity entity) {
-        boolean controller = tile.getProperties().get(CONTROLLER, false, Boolean.class);
+        boolean controller = tile.getProperties().get(TiledPropertyNames.CONTROLLER, false, Boolean.class);
         if(!controller) return;
 
         entity.add(new Controller());
@@ -191,7 +180,7 @@ public class TiledAshleyConfigurator {
     }
 
     private TextureRegion getTextureRegion(TiledMapTile tile) {
-        String atlasAssetStr = tile.getProperties().get(ATLAS_ASSET, AtlasAsset.OBJECTS.name(), String.class);
+        String atlasAssetStr = tile.getProperties().get(TiledPropertyNames.ATLAS_ASSET, AtlasAsset.OBJECTS.name(), String.class);
         AtlasAsset atlasAsset = AtlasAsset.valueOf(atlasAssetStr);
         TextureAtlas textureAtlas = this.assetService.get(atlasAsset);
         FileTextureData textureData = (FileTextureData)tile.getTextureRegion().getTexture().getTextureData();
@@ -219,7 +208,7 @@ public class TiledAshleyConfigurator {
             entity);
 
         if(triggerClass == TriggerClass.MAP_CHANGE) {
-            String mapName = mapObject.getProperties().get("target_map", "", String.class);
+            String mapName = mapObject.getProperties().get(TiledPropertyNames.TARGET_MAP, "", String.class);
             if(mapName.isEmpty()) return;
 
             MapAsset mapAsset = MapAsset.valueOf(mapName);
@@ -227,7 +216,7 @@ public class TiledAshleyConfigurator {
             entity.add(new ChangeMapTrigger(mapAsset));
             engine.addEntity(entity);
         } else if(triggerClass == TriggerClass.ADD_INTERACTION) {
-            String type = mapObject.getProperties().get("interaction_type", "", String.class);
+            String type = mapObject.getProperties().get(TiledPropertyNames.INTERACTION_TYPE, "", String.class);
 
             if(type.isEmpty()) return;
 
@@ -237,9 +226,9 @@ public class TiledAshleyConfigurator {
 
             engine.addEntity(entity);
         } else if(triggerClass == TriggerClass.BATTLE) {
-            Integer lowerLevel = mapObject.getProperties().get("level_lower_limit", 1, Integer.class);
-            Integer upperLevel = mapObject.getProperties().get("level_upper_limit", 1, Integer.class);
-            String pokemonIds = mapObject.getProperties().get("pokemon_ids", "", String.class);
+            Integer lowerLevel = mapObject.getProperties().get(TiledPropertyNames.LEVEL_LOWER_LIMIT, 1, Integer.class);
+            Integer upperLevel = mapObject.getProperties().get(TiledPropertyNames.LEVEL_UPPER_LIMIT, 1, Integer.class);
+            String pokemonIds = mapObject.getProperties().get(TiledPropertyNames.POKEMON_IDS, "", String.class);
 
             if(pokemonIds.isEmpty()) return;
 

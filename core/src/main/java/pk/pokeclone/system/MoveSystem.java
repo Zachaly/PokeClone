@@ -7,7 +7,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import pk.pokeclone.component.Move;
 import pk.pokeclone.component.Physic;
-import pk.pokeclone.component.Transform;
 
 public class MoveSystem extends IteratingSystem {
     private final Vector2 normalizedDirection = new Vector2();

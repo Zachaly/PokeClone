@@ -115,10 +115,10 @@ public class TiledPhysics {
     private static FixtureDef fixtureDefinitionOfMapObjectAndShape(MapObject rectMapObject, Shape shape) {
         FixtureDef def = new FixtureDef();
         def.shape = shape;
-        def.friction = rectMapObject.getProperties().get("friction", 0f, Float.class);
-        def.restitution = rectMapObject.getProperties().get("restitution", 0f, Float.class);;
-        def.density = rectMapObject.getProperties().get("density", 0f, Float.class);;
-        def.isSensor = rectMapObject.getProperties().get("sensor", false, Boolean.class);;
+        def.friction = rectMapObject.getProperties().get(TiledPropertyNames.FRICTION, 0f, Float.class);
+        def.restitution = rectMapObject.getProperties().get(TiledPropertyNames.RESTITUTION, 0f, Float.class);;
+        def.density = rectMapObject.getProperties().get(TiledPropertyNames.DENSITY, 0f, Float.class);;
+        def.isSensor = rectMapObject.getProperties().get(TiledPropertyNames.SENSOR, false, Boolean.class);;
         return def;
     }
 }

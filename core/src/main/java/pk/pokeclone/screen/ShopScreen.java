@@ -8,9 +8,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
-import pk.pokeclone.ui.model.PokecenterViewModel;
 import pk.pokeclone.ui.model.ShopViewModel;
-import pk.pokeclone.ui.view.PokecenterView;
 import pk.pokeclone.ui.view.ShopView;
 
 public class ShopScreen extends ScreenAdapter {

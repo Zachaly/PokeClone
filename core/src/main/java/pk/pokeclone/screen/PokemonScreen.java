@@ -9,10 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
 import pk.pokeclone.pokemon.Pokemon;
-import pk.pokeclone.pokemon.PokemonStats;
-import pk.pokeclone.ui.model.PokemonListViewModel;
 import pk.pokeclone.ui.model.PokemonViewModel;
-import pk.pokeclone.ui.view.PokemonListView;
 import pk.pokeclone.ui.view.PokemonView;
 
 public class PokemonScreen extends ScreenAdapter {

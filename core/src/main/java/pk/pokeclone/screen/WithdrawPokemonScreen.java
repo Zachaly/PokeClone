@@ -8,9 +8,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
-import pk.pokeclone.ui.model.PokecenterViewModel;
 import pk.pokeclone.ui.model.WithdrawPokemonViewModel;
-import pk.pokeclone.ui.view.PokecenterView;
 import pk.pokeclone.ui.view.WithdrawPokemonView;
 
 public class WithdrawPokemonScreen extends ScreenAdapter {

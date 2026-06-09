@@ -8,9 +8,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
-import pk.pokeclone.ui.model.MainMenuViewModel;
 import pk.pokeclone.ui.model.MenuViewModel;
-import pk.pokeclone.ui.view.MainMenuView;
 import pk.pokeclone.ui.view.MenuView;
 
 public class MenuScreen extends ScreenAdapter {

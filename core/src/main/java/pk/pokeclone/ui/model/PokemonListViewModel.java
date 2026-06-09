@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PokemonListViewModel extends ViewModel {
 
-    private PlayerState playerState;
+    private final PlayerState playerState;
 
     public PokemonListViewModel(PokeClone game, PlayerState playerState) {
         super(game);

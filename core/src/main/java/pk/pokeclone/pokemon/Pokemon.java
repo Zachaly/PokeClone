@@ -112,4 +112,8 @@ public class Pokemon {
     public void clearStages() {
         statStages.clear();
     }
+
+    public int expYield() {
+        return level * 25;
+    }
 }

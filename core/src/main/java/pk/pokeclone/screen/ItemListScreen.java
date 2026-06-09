@@ -9,9 +9,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import pk.pokeclone.PokeClone;
 import pk.pokeclone.asset.SkinAsset;
 import pk.pokeclone.ui.model.ItemListViewModel;
-import pk.pokeclone.ui.model.PokemonListViewModel;
 import pk.pokeclone.ui.view.ItemListView;
-import pk.pokeclone.ui.view.PokemonListView;
 
 public class ItemListScreen extends ScreenAdapter {
     private final PokeClone game;
