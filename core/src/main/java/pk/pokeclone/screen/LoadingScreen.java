@@ -50,5 +50,7 @@ public class LoadingScreen extends ScreenAdapter {
         this.game.addScreen(new WithdrawPokemonScreen(game));
         this.game.addScreen(new DepositPokemonScreen(game));
         this.game.addScreen(new ShopScreen(game));
+        this.game.addScreen(new BattleScreen(game));
+        this.game.addScreen(new BattleResultScreen(game));
     }
 }

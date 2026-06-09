@@ -237,8 +237,8 @@ public class TiledAshleyConfigurator {
 
             engine.addEntity(entity);
         } else if(triggerClass == TriggerClass.BATTLE) {
-            Integer lowerLevel = mapObject.getProperties().get("lower_level_limit", 1, Integer.class);
-            Integer upperLevel = mapObject.getProperties().get("upper_level_limit", 1, Integer.class);
+            Integer lowerLevel = mapObject.getProperties().get("level_lower_limit", 1, Integer.class);
+            Integer upperLevel = mapObject.getProperties().get("level_upper_limit", 1, Integer.class);
             String pokemonIds = mapObject.getProperties().get("pokemon_ids", "", String.class);
 
             if(pokemonIds.isEmpty()) return;

@@ -19,14 +19,13 @@ public class PlayerState {
         boxedPokemons = new ArrayList<>();
     }
 
-    public boolean addPokemon(Pokemon pokemon) {
+    public void addPokemon(Pokemon pokemon) {
         if(pokemons.size() > 5) {
-            return false;
+            boxedPokemons.add(pokemon);
+            return;
         }
 
         pokemons.add(pokemon);
-
-        return true;
     }
 
     public <T extends Item> T withdrawItem(Class<T> itemClass) {

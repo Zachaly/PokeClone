@@ -109,7 +109,7 @@ public class GameScreen extends ScreenAdapter {
         physicWorld.dispose();
     }
 
-    private void changeMap(MapAsset mapAsset) {
+    public void changeMap(MapAsset mapAsset) {
         nextMap = mapAsset;
     }
 

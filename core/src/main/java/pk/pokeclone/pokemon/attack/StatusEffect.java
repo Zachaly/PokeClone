@@ -2,9 +2,11 @@ package pk.pokeclone.pokemon.attack;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import pk.pokeclone.pokemon.Pokemon;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class StatusEffect {
     public static String POISON = "POISON";
@@ -12,7 +14,9 @@ public class StatusEffect {
 
     private String name;
 
-    void effect(Pokemon target) {
+
+
+    public void effect(Pokemon target) {
         target.takeDamage(target.getMaxHealth() / 8);
     }
 }

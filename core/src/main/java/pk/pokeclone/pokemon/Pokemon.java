@@ -40,7 +40,7 @@ public class Pokemon {
     }
 
     public int getMaxHealth() {
-        return 10 + level + (description.getBaseStats().getHp() * level / 50);
+        return 10 + level + (int)Math.ceil(description.getBaseStats().getHp() * level / 50f);
     }
 
     public int getAttack() {
@@ -78,9 +78,11 @@ public class Pokemon {
     public void addExperience(int exp) {
         experience += exp;
 
-        while(experience >= 500) {
+        int nextLevelCap = (int)Math.ceil(level / 5f) * 100;
+        while(experience >= nextLevelCap) {
             level++;
-            experience -= 500;
+            experience -= nextLevelCap = (int)Math.ceil(level / 5f) * 100;;
+            nextLevelCap = (int)Math.ceil(level / 5f) * 100;
         }
 
         attacks = description.getAttacksForLevel(level);

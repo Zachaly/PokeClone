@@ -13,7 +13,12 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import lombok.Getter;
 import pk.pokeclone.asset.AssetService;
+import pk.pokeclone.asset.MapAsset;
 import pk.pokeclone.player.PlayerState;
+import pk.pokeclone.pokemon.Pokemon;
+import pk.pokeclone.screen.BattleResultScreen;
+import pk.pokeclone.screen.BattleScreen;
+import pk.pokeclone.screen.GameScreen;
 import pk.pokeclone.screen.LoadingScreen;
 
 import java.util.HashMap;
@@ -79,6 +84,17 @@ public class PokeClone extends Game {
         setScreen(screen);
     }
 
+    public void startBattle(Pokemon pokemon) {
+        BattleScreen battleScreen = (BattleScreen) screenCache.get(BattleScreen.class);
+
+        if(battleScreen == null) {
+            throw new GdxRuntimeException("Screen not found");
+        }
+
+        battleScreen.setAttacker(pokemon);
+        setScreen(battleScreen);
+    }
+
     public void removeScreen(Screen screen) {
         screenCache.remove(screen.getClass());
     }
@@ -113,4 +129,20 @@ public class PokeClone extends Game {
         super.dispose();
     }
 
+    public void returnToPokecenter() {
+        GameScreen gameScreen = (GameScreen) screenCache.get(GameScreen.class);
+
+        gameScreen.changeMap(MapAsset.POKECENTER);
+
+        setScreen(gameScreen);
+    }
+
+    public void battleEnded(Pokemon winner, int expGain) {
+        BattleResultScreen battleResultScreen = (BattleResultScreen)screenCache.get(BattleResultScreen.class);
+
+        battleResultScreen.setWinner(winner);
+        battleResultScreen.setExpGain(expGain);
+
+        setScreen(battleResultScreen);
+    }
 }

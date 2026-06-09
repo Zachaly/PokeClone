@@ -6,7 +6,8 @@ import lombok.Getter;
 
 public enum SkinAsset implements Asset<Skin> {
     DEFAULT("skin.json"),
-    INVENTORY("inventory-skin.json");
+    INVENTORY("inventory-skin.json"),
+    BATTLE("battle-skin.json");
     @Getter
     private final AssetDescriptor<Skin> descriptor;
 

@@ -11,6 +11,10 @@ public class Potion extends Item {
 
     @Override
     public boolean use(Pokemon pokemon) {
+        if(pokemon.getHealth() == pokemon.getMaxHealth()) {
+            return false;
+        }
+
         pokemon.heal(20);
 
         return true;

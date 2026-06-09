@@ -29,6 +29,7 @@ public class BattleTriggerSystem extends IteratingSystem {
 
                 Pokemon pokemon = Pokemon.load(index, random.nextInt(trigger.getLowerLevelLimit(), trigger.getUpperLevelLimit() + 1));
 
+                game.startBattle(pokemon);
             }
         }
 
